@@ -15,8 +15,13 @@ import { useLanguage } from "../context/LanguageProvider.jsx";
 
 export default function LoginPage() {
   const { t, language, setLanguage } = useLanguage();
-  const { login, loginWithGoogle } = useAuth();
+  const { login, loginWithGoogle, isAuthenticated, loading: authLoading } = useAuth();
   const navigate = useNavigate();
+
+  if (!authLoading && isAuthenticated) {
+    navigate("/user/dashboard", { replace: true });
+  }
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
