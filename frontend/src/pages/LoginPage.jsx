@@ -57,7 +57,11 @@ export default function LoginPage() {
       setConfirmationResult(result);
       setOtpSent(true);
     } catch (err) {
-      setError(err.message?.replace("Firebase: ", "") || "Failed to send OTP to mobile number.");
+      if (err.code === "auth/billing-not-enabled" || err.message?.includes("billing-not-enabled")) {
+        setError("Firebase free plan requires using a Test Phone Number (e.g. +91 99999 99999 with OTP 123456) configured in Firebase Console.");
+      } else {
+        setError(err.message?.replace("Firebase: ", "") || "Failed to send OTP to mobile number.");
+      }
     } finally {
       setLoading(false);
     }
