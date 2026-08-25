@@ -51,20 +51,20 @@ export default function DashboardLayout() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 w-72 bg-navy-900 text-slate-100 flex flex-col justify-between transition-transform duration-300 ease-in-out md:static md:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 w-72 bg-navy-900 text-slate-100 flex flex-col justify-between transition-transform duration-300 ease-in-out md:sticky md:top-0 md:h-screen overflow-hidden md:translate-x-0 ${
           mobileOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full"
         }`}
       >
-        <div>
+        <div className="flex flex-col h-full overflow-hidden">
           {/* Brand Header */}
-          <div className="p-6 border-b border-navy-800/80 flex items-center justify-between">
+          <div className="p-5 border-b border-navy-800/80 flex items-center justify-between flex-shrink-0">
             <Link to="/user/dashboard" className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-xl bg-gradient-to-tr from-teal-500 to-teal-400 flex items-center justify-center shadow-glow">
+              <div className="h-9 w-9 rounded-xl bg-gradient-to-tr from-teal-500 to-teal-400 flex items-center justify-center shadow-glow">
                 <Sparkles className="h-5 w-5 text-navy-950 font-bold" />
               </div>
               <div>
-                <p className="font-bold text-lg text-white tracking-tight leading-tight">{t("brand")}</p>
-                <p className="text-[11px] text-teal-300/90 font-medium leading-tight mt-0.5">{t("tagline")}</p>
+                <p className="font-bold text-base text-white tracking-tight leading-tight">{t("brand")}</p>
+                <p className="text-[10px] text-teal-300/90 font-medium leading-tight mt-0.5">{t("tagline")}</p>
               </div>
             </Link>
             <button
@@ -76,7 +76,7 @@ export default function DashboardLayout() {
           </div>
 
           {/* Navigation Items */}
-          <nav className="p-4 space-y-1.5 overflow-y-auto max-h-[calc(100vh-220px)]">
+          <nav className="p-3.5 space-y-1 overflow-hidden flex-1 flex flex-col justify-center">
             {navItems.map(({ key, path, icon: Icon }) => {
               const active = location.pathname === path || (path !== "/user/dashboard" && location.pathname.startsWith(path));
               return (
@@ -84,7 +84,7 @@ export default function DashboardLayout() {
                   key={path}
                   to={path}
                   onClick={() => setMobileOpen(false)}
-                  className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                  className={`flex items-center gap-3 px-3.5 py-2 rounded-xl text-xs font-medium transition-all ${
                     active
                       ? "bg-teal-600 text-white shadow-md font-semibold"
                       : "text-slate-300 hover:bg-navy-800/70 hover:text-white"
