@@ -8,6 +8,8 @@ import {
   signOut as fbSignOut,
   onAuthStateChanged,
   updateProfile as fbUpdateProfile,
+  RecaptchaVerifier,
+  signInWithPhoneNumber,
 } from "firebase/auth";
 import { getFirestore, doc, setDoc, getDoc, updateDoc } from "firebase/firestore";
 import { getAnalytics, isSupported } from "firebase/analytics";
@@ -49,6 +51,8 @@ export {
   fbSignOut,
   onAuthStateChanged,
   fbUpdateProfile,
+  RecaptchaVerifier,
+  signInWithPhoneNumber,
   doc,
   setDoc,
   getDoc,

@@ -9,6 +9,8 @@ import {
   fbSignOut,
   onAuthStateChanged,
   fbUpdateProfile,
+  RecaptchaVerifier,
+  signInWithPhoneNumber,
   doc,
   setDoc,
   getDoc,
@@ -105,6 +107,28 @@ export function AuthProvider({ children }) {
     return cred.user;
   };
 
+  const setupRecaptcha = (containerId = "recaptcha-container") => {
+    if (window.recaptchaVerifier) {
+      window.recaptchaVerifier.clear();
+    }
+    window.recaptchaVerifier = new RecaptchaVerifier(auth, containerId, {
+      size: "invisible",
+      callback: () => {},
+    });
+    return window.recaptchaVerifier;
+  };
+
+  const sendPhoneOtp = async (phoneNumber, containerId = "recaptcha-container") => {
+    const appVerifier = setupRecaptcha(containerId);
+    const confirmationResult = await signInWithPhoneNumber(auth, phoneNumber, appVerifier);
+    return confirmationResult;
+  };
+
+  const verifyPhoneOtp = async (confirmationResult, otpCode) => {
+    const cred = await confirmationResult.confirm(otpCode);
+    return cred.user;
+  };
+
   const logout = async () => {
     await fbSignOut(auth);
   };
@@ -143,6 +167,8 @@ export function AuthProvider({ children }) {
       signup,
       login,
       loginWithGoogle,
+      sendPhoneOtp,
+      verifyPhoneOtp,
       logout,
       updateProfile,
       loading,
