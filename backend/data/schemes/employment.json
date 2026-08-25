@@ -1,0 +1,287 @@
+[
+  {
+    "id": 401,
+    "name": "PM Street Vendor's AtmaNirbhar Nidhi",
+    "shortName": "PM SVANidhi",
+    "category": "Employment",
+    "subCategory": "Micro Credit for Street Vendors",
+    "beneficiaries": ["Street Vendors", "Hawkers", "Thelewala", "Urban Micro-entrepreneurs"],
+    "schemeType": "Micro Credit Support",
+    "description": "Central Sector scheme providing affordable collateral-free working capital loan to street vendors to resume their livelihoods and scale their business.",
+    "benefit": {
+      "type": "subsidy",
+      "amount": 50000,
+      "currency": "INR",
+      "frequency": "Graduated Credit Tranches",
+      "installments": 3,
+      "description": "Collateral-free working capital loan: 1st tranche up to ₹10,000 (1-year repayment), 2nd tranche up to ₹20,000, 3rd tranche up to ₹50,000. Interest subsidy of 7% per annum on timely repayment + cashback on digital transactions up to ₹1,200/year."
+    },
+    "eligibility": {
+      "general": [
+        "Street vendors / hawkers vending in urban, peri-urban, or rural areas on or before March 24, 2020",
+        "Vendors with Certificate of Vending / ID Card issued by Urban Local Bodies (ULBs)",
+        "Vendors identified in the survey or possessing a Letter of Recommendation (LoR) from ULB / Town Vending Committee (TVC)"
+      ],
+      "incomeLimit": null,
+      "age": "18-65",
+      "gender": "Any",
+      "occupation": "Vendor",
+      "state": "All",
+      "otherConditions": ["Must have an Aadhaar-linked active bank account"]
+    },
+    "eligibilityChecks": [
+      { "key": "isStreetVendor", "type": "boolean", "required": true, "question": "Are you a street vendor, hawker, or small mobile merchant?" },
+      { "key": "hasVendingIDorLoR", "type": "boolean", "required": true, "question": "Do you hold a Vending Certificate, Municipal ID, or Letter of Recommendation (LoR)?" }
+    ],
+    "requiredDocuments": [
+      "Aadhaar Card",
+      "Vending Certificate / Urban Local Body ID / Letter of Recommendation (LoR)",
+      "Bank Account Passbook / Statement",
+      "Mobile number linked with Aadhaar"
+    ],
+    "applicationProcess": [
+      "Visit PM SVANidhi portal (pmsvanidhi.mohua.gov.in) or visit nearest CSC / Banking Correspondent (BC)",
+      "Verify Aadhaar with OTP and enter municipal ULB details",
+      "Fill vending activity details and select preferred lending institution / bank branch",
+      "Submit application; bank sanctions and disburses loan amount directly to bank account"
+    ],
+    "applicationWindow": { "type": "Year Round", "details": "Continuous online loan application" },
+    "processingTime": { "estimated": "7-14 days", "dependsOn": ["Bank credit approval and ULB record match"] },
+    "verification": ["Urban Local Body (ULB)", "Town Vending Committee", "Lending Bank"],
+    "officialLinks": {
+      "schemePortal": "https://pmsvanidhi.mohua.gov.in",
+      "myScheme": "https://www.myscheme.gov.in/schemes/pm-svanidhi",
+      "ministry": "https://mohua.gov.in"
+    },
+    "modeOfApplication": ["Online (pmsvanidhi.mohua.gov.in)", "PM SVANidhi Mobile App", "CSC / Banking Correspondent"],
+    "ministry": "Ministry of Housing and Urban Affairs",
+    "governmentLevel": "Central",
+    "availableStates": ["All"],
+    "status": "Active",
+    "tags": ["street vendor", "loan", "micro credit", "svanidhi", "7 percent subsidy", "10000 20000 50000"],
+    "searchKeywords": ["pm svanidhi", "vendor loan 10000", "street vendor subsidy", "pmsvanidhi", "thela loan"],
+    "relatedSchemes": [402, 404],
+    "aiContext": "Provides ₹10k -> ₹20k -> ₹50k collateral-free working capital loan to street vendors with 7% interest subsidy on prompt repayment and ₹1,200/year cashback on digital UPI sales.",
+    "faqs": [
+      { "question": "Is collateral or guarantor required for PM SVANidhi?", "answer": "No, the loan is 100% collateral-free and backed by the Credit Guarantee Fund." },
+      { "question": "What if I do not have a vending certificate?", "answer": "You can apply for a Letter of Recommendation (LoR) from your local Municipality / ULB directly through the portal." }
+    ],
+    "lastUpdated": "2026-07-10",
+    "lastVerified": "2026-07-10"
+  },
+  {
+    "id": 402,
+    "name": "Prime Minister Employment Generation Programme",
+    "shortName": "PMEGP",
+    "category": "Employment",
+    "subCategory": "Self Employment & Enterprise Subsidy",
+    "beneficiaries": ["Entrepreneurs", "Unemployed Youth", "Women", "SC/ST/OBC/Minority/Ex-servicemen/PH"],
+    "schemeType": "Credit Linked Capital Subsidy",
+    "description": "Credit-linked subsidy programme to generate continuous and sustainable self-employment opportunities in rural and urban areas through setting up new micro-enterprises.",
+    "benefit": {
+      "type": "subsidy",
+      "amount": "Subsidy up to 35% of project cost (Max project ₹50 Lakh)",
+      "currency": "INR",
+      "frequency": "One-time Margin Money Subsidy",
+      "installments": 1,
+      "description": "Margin Money Subsidy of 25% (General category in urban) to 35% (Special categories including SC/ST/OBC/Women/Rural). Maximum project cost ₹50 Lakh for manufacturing and ₹20 Lakh for service sector."
+    },
+    "eligibility": {
+      "general": [
+        "Any individual above 18 years of age",
+        "Must have passed at least VIII standard for projects above ₹10 Lakh in manufacturing or above ₹5 Lakh in service sector",
+        "Existing units or units that have already availed government subsidy under other schemes are not eligible"
+      ],
+      "incomeLimit": null,
+      "age": "18-60",
+      "gender": "Any",
+      "occupation": "Unemployed / Self-Employed",
+      "state": "All",
+      "otherConditions": ["Only one person per family is eligible for assistance"]
+    },
+    "eligibilityChecks": [
+      { "key": "is18YearsOrOlder", "type": "boolean", "required": true, "question": "Are you at least 18 years of age?" },
+      { "key": "hasPassedClass8", "type": "boolean", "required": true, "question": "Have you passed minimum 8th class (mandatory for manufacturing > 10L / service > 5L)?" },
+      { "key": "isNewMicroEnterprise", "type": "boolean", "required": true, "question": "Are you setting up a brand new micro-enterprise project?" }
+    ],
+    "requiredDocuments": [
+      "Aadhaar Card and PAN Card",
+      "Detailed Project Report (DPR) / Business Plan",
+      "Special Category / Caste Certificate (if seeking 35% subsidy)",
+      "8th Pass Mark Sheet / Highest Educational Certificate",
+      "EDP (Entrepreneurship Development Programme) Training Certificate",
+      "Rural Area Certificate (issued by Sarpanch / Revenue Authority, if applicable)"
+    ],
+    "applicationProcess": [
+      "Apply online on KVIC PMEGP e-Portal (kviconline.gov.in/pmegpeportal)",
+      "Fill applicant data, proposed business activity, district, and financing bank branch",
+      "Upload project report, caste/special category certificate, and educational proof",
+      "District Level Task Force Committee (DLTFC) scrutinizes application and forwards to bank",
+      "Bank sanctions loan; KVIC releases margin money subsidy into escrow lock-in account"
+    ],
+    "applicationWindow": { "type": "Year Round", "details": "Online portal accepts applications throughout the year" },
+    "processingTime": { "estimated": "30-60 days", "dependsOn": ["DLTFC clearance and bank loan sanction"] },
+    "verification": ["District Level Task Force Committee (DLTFC)", "KVIC / KVIB / DIC Nodal Agencies", "Bank Credit Officer"],
+    "officialLinks": {
+      "schemePortal": "https://www.kviconline.gov.in/pmegpeportal",
+      "myScheme": "https://www.myscheme.gov.in/schemes/pmegp",
+      "ministry": "https://msme.gov.in"
+    },
+    "modeOfApplication": ["Online (kviconline.gov.in)"],
+    "ministry": "Ministry of Micro, Small and Medium Enterprises (MSME)",
+    "governmentLevel": "Central",
+    "availableStates": ["All"],
+    "status": "Active",
+    "tags": ["business loan", "pmegp", "msme subsidy", "35 percent subsidy", "self employment", "manufacturing"],
+    "searchKeywords": ["pmegp loan", "kvic subsidy", "msme 50 lakh loan", "self employment grant", "business subsidy"],
+    "relatedSchemes": [401, 404],
+    "aiContext": "Provides bank loans with 15% to 35% government subsidy for starting new businesses up to ₹50 Lakh (manufacturing) and ₹20 Lakh (service). Minimum 8th class pass.",
+    "faqs": [
+      { "question": "What is the subsidy percentage for women and SC/ST applicants in rural areas?", "answer": "Special category applicants (Women, SC, ST, OBC, Minorities, Ex-servicemen, PH) in rural areas get a 35% margin money subsidy." },
+      { "question": "Is collateral required for PMEGP loans?", "answer": "No collateral is required for loans up to ₹10 Lakh (covered under CGTMSE guarantee)." }
+    ],
+    "lastUpdated": "2026-07-25",
+    "lastVerified": "2026-07-25"
+  },
+  {
+    "id": 403,
+    "name": "Mahatma Gandhi National Rural Employment Guarantee Scheme",
+    "shortName": "MGNREGS",
+    "category": "Employment",
+    "subCategory": "Guaranteed Wage Employment",
+    "beneficiaries": ["Rural Households", "Unskilled Labourers", "Women Workers"],
+    "schemeType": "Wage Employment Guarantee",
+    "description": "Legal guarantee for at least 100 days of wage employment in a financial year to every rural household whose adult members volunteer to do unskilled manual work.",
+    "benefit": {
+      "type": "monetary",
+      "amount": "State Notified Daily Wage Rate (₹240 - ₹374/day)",
+      "currency": "INR",
+      "frequency": "Weekly / Fortnightly via DBT",
+      "installments": null,
+      "description": "100 days guaranteed wage employment per year per household. Wages paid within 15 days of work completion directly into the worker's Aadhaar-enabled bank or post office account."
+    },
+    "eligibility": {
+      "general": [
+        "Adult members of a rural household who are 18 years of age or above",
+        "Willing to do unskilled manual labour",
+        "Must be a resident of the Gram Panchayat area"
+      ],
+      "incomeLimit": null,
+      "age": "18-65",
+      "gender": "Any",
+      "occupation": "Labourer / Unemployed",
+      "state": "All",
+      "otherConditions": ["Work must be provided within 5 km of residence, or 10% extra wage is paid"]
+    },
+    "eligibilityChecks": [
+      { "key": "isRuralResident", "type": "boolean", "required": true, "question": "Do you live in a rural area under a Gram Panchayat?" },
+      { "key": "isWillingForUnskilledManualWork", "type": "boolean", "required": true, "question": "Are you willing to do unskilled manual civil/agricultural work?" }
+    ],
+    "requiredDocuments": [
+      "Aadhaar Card",
+      "Passport-size Photographs of all adult household members",
+      "Aadhaar-seeded Bank or Post Office Passbook",
+      "Existing Job Card (if applying for work allocation)"
+    ],
+    "applicationProcess": [
+      "Apply in writing or orally to the Gram Panchayat for a MGNREGA Job Card",
+      "Gram Panchayat verifies household residence and issues Job Card within 15 days",
+      "Submit demand for work (Form 6) at Gram Panchayat / Grama Sachivalayam",
+      "Work must be allotted within 15 days, otherwise Unemployment Allowance is legally mandated"
+    ],
+    "applicationWindow": { "type": "Year Round", "details": "Job cards and work demand can be registered at any time" },
+    "processingTime": { "estimated": "15 days for Job Card issuance / 15 days for work allocation", "dependsOn": ["Gram Panchayat register"] },
+    "verification": ["Panchayat Secretary", "Gram Rozgar Sahayak (GRS)", "NREGA Soft Database"],
+    "officialLinks": {
+      "schemePortal": "https://nrega.nic.in",
+      "myScheme": "https://www.myscheme.gov.in/schemes/mgnrega",
+      "ministry": "https://rural.gov.in"
+    },
+    "modeOfApplication": ["Gram Panchayat Office", "Grama Sachivalayam", "NREGA Mobile App"],
+    "ministry": "Ministry of Rural Development",
+    "governmentLevel": "Central",
+    "availableStates": ["All"],
+    "status": "Active",
+    "tags": ["mgnrega", "nrega job card", "100 days work", "rural wages", "dbt wages"],
+    "searchKeywords": ["mgnrega", "nrega job card", "100 days employment", "rural work scheme", "daily wage government"],
+    "relatedSchemes": [401, 402],
+    "aiContext": "Provides 100 days of guaranteed unskilled manual wage employment to rural adults. Wages paid directly to bank/post office accounts within 15 days.",
+    "faqs": [
+      { "question": "What happens if work is not provided within 15 days of demand?", "answer": "The state government is legally obligated to pay a daily Unemployment Allowance." },
+      { "question": "Are women prioritized under MGNREGA?", "answer": "Yes, by law at least one-third of all beneficiaries must be women, and equal wages are guaranteed." }
+    ],
+    "lastUpdated": "2026-06-01",
+    "lastVerified": "2026-06-01"
+  },
+  {
+    "id": 404,
+    "name": "Pradhan Mantri Mudra Yojana",
+    "shortName": "PMMY",
+    "category": "Employment",
+    "subCategory": "Micro Business Loans",
+    "beneficiaries": ["Small Business Owners", "Shopkeepers", "Artisans", "Food Processors", "Women Entrepreneurs"],
+    "schemeType": "Collateral-free Business Loan",
+    "description": "Provides collateral-free institutional loans up to ₹20 Lakh to non-corporate, non-farm small and micro enterprises across three categories: Shishu, Kishore, and Tarun.",
+    "benefit": {
+      "type": "subsidy",
+      "amount": 2000000,
+      "currency": "INR",
+      "frequency": "Term Loan / Working Capital",
+      "installments": null,
+      "description": "Collateral-free loan: Shishu (up to ₹50,000), Kishore (₹50,001 to ₹5 Lakh), Tarun (₹5 Lakh to ₹10 Lakh), and Tarun Plus (up to ₹20 Lakh for entrepreneurs who have successfully repaid previous Tarun loans)."
+    },
+    "eligibility": {
+      "general": [
+        "Any Indian citizen who has a business plan for a non-farm income generating activity",
+        "Manufacturing, processing, trading, or service sector micro-units",
+        "Should not be a defaulter to any bank or financial institution"
+      ],
+      "incomeLimit": null,
+      "age": "18-65",
+      "gender": "Any",
+      "occupation": "Self-Employed / Entrepreneur",
+      "state": "All",
+      "otherConditions": ["No processing fee for Shishu and Kishore loans"]
+    },
+    "eligibilityChecks": [
+      { "key": "isNonFarmEnterprise", "type": "boolean", "required": true, "question": "Is your business activity in manufacturing, trading, retail, services, or food processing?" },
+      { "key": "hasCleanCreditRecord", "type": "boolean", "required": true, "question": "Do you have a clean repayment record without bank NPA status?" }
+    ],
+    "requiredDocuments": [
+      "Aadhaar Card / Voter ID / PAN Card",
+      "Business Address Proof / Udyam Registration Certificate",
+      "Bank Account Statement for the last 6 months",
+      "Quotation of machinery/items to be purchased (for term loans)",
+      "Passport size photographs"
+    ],
+    "applicationProcess": [
+      "Apply online on Udyamimitra portal (udyamimitra.in) or visit any Commercial Bank, RRB, Small Finance Bank, or MFI",
+      "Select loan category (Shishu, Kishore, or Tarun)",
+      "Submit application with business plan and identity documents",
+      "Bank sanctions Mudra loan and issues Mudra Debit Card for working capital"
+    ],
+    "applicationWindow": { "type": "Year Round", "details": "Continuous application at all public, private, and rural bank branches" },
+    "processingTime": { "estimated": "7-21 days", "dependsOn": ["Bank credit assessment"] },
+    "verification": ["Bank Branch Manager", "Credit Bureau Check (CIBIL/CRIF)"],
+    "officialLinks": {
+      "schemePortal": "https://www.mudra.org.in",
+      "myScheme": "https://www.myscheme.gov.in/schemes/pmmy",
+      "ministry": "https://financialservices.gov.in"
+    },
+    "modeOfApplication": ["Udyamimitra Portal", "Any Bank Branch", "Small Finance Banks"],
+    "ministry": "Department of Financial Services, Ministry of Finance",
+    "governmentLevel": "Central",
+    "availableStates": ["All"],
+    "status": "Active",
+    "tags": ["mudra loan", "shishu", "kishore", "tarun", "business loan", "20 lakh"],
+    "searchKeywords": ["mudra loan", "pm mudra yojana", "shishu loan 50000", "small business loan", "mudra card"],
+    "relatedSchemes": [401, 402],
+    "aiContext": "Provides collateral-free business loans up to ₹20 Lakh across Shishu (≤50k), Kishore (50k-5L), and Tarun (5L-20L) for shops, trading, manufacturing, and services.",
+    "faqs": [
+      { "question": "Is collateral required for a Mudra loan?", "answer": "No collateral or third-party guarantee is required for any Mudra loan up to ₹20 Lakh." },
+      { "question": "What is the Mudra Card?", "answer": "A RuPay debit card providing working capital facility so the borrower can withdraw funds as and when required." }
+    ],
+    "lastUpdated": "2026-08-01",
+    "lastVerified": "2026-08-01"
+  }
+]

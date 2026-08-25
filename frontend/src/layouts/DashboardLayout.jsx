@@ -1,0 +1,201 @@
+import {
+  Bell,
+  BookOpen,
+  CheckCircle,
+  FileText,
+  GitCompare,
+  Globe,
+  HelpCircle,
+  Home,
+  LayoutDashboard,
+  LogOut,
+  Menu,
+  MessageSquareText,
+  ShieldAlert,
+  Sparkles,
+  User,
+  X,
+} from "lucide-react";
+import { useState } from "react";
+import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
+import { useAuth } from "../context/AuthProvider.jsx";
+import { useLanguage } from "../context/LanguageProvider.jsx";
+
+const navItems = [
+  { key: "dashboard", path: "/user/dashboard", icon: LayoutDashboard },
+  { key: "schemes", path: "/user/schemes", icon: BookOpen },
+  { key: "eligibility", path: "/user/eligibility", icon: CheckCircle },
+  { key: "recommendations", path: "/user/recommendations", icon: Sparkles },
+  { key: "assistant", path: "/user/assistant", icon: MessageSquareText },
+  { key: "documents", path: "/user/documents", icon: FileText },
+  { key: "comparison", path: "/user/comparison", icon: GitCompare },
+  { key: "notifications", path: "/user/notifications", icon: Bell },
+  { key: "profile", path: "/user/profile", icon: User },
+];
+
+export default function DashboardLayout() {
+  const { t, language, setLanguage } = useLanguage();
+  const { logout, session, profile } = useAuth();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+
+  return (
+    <div className="min-h-screen bg-slate-50 flex flex-col md:flex-row">
+      {/* Mobile Drawer Backdrop */}
+      {mobileOpen && (
+        <div
+          className="fixed inset-0 z-40 bg-slate-900/60 backdrop-blur-sm md:hidden"
+          onClick={() => setMobileOpen(false)}
+        />
+      )}
+
+      {/* Sidebar */}
+      <aside
+        className={`fixed inset-y-0 left-0 z-50 w-72 bg-navy-900 text-slate-100 flex flex-col justify-between transition-transform duration-300 ease-in-out md:static md:translate-x-0 ${
+          mobileOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full"
+        }`}
+      >
+        <div>
+          {/* Brand Header */}
+          <div className="p-6 border-b border-navy-800/80 flex items-center justify-between">
+            <Link to="/user/dashboard" className="flex items-center gap-3">
+              <div className="h-10 w-10 rounded-xl bg-gradient-to-tr from-teal-500 to-teal-400 flex items-center justify-center shadow-glow">
+                <Sparkles className="h-5 w-5 text-navy-950 font-bold" />
+              </div>
+              <div>
+                <p className="font-bold text-lg text-white tracking-tight leading-tight">{t("brand")}</p>
+                <p className="text-[11px] text-teal-300/90 font-medium leading-tight mt-0.5">{t("tagline")}</p>
+              </div>
+            </Link>
+            <button
+              className="p-1 rounded-lg hover:bg-navy-800 md:hidden text-slate-400 hover:text-white"
+              onClick={() => setMobileOpen(false)}
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
+
+          {/* Navigation Items */}
+          <nav className="p-4 space-y-1.5 overflow-y-auto max-h-[calc(100vh-220px)]">
+            {navItems.map(({ key, path, icon: Icon }) => {
+              const active = location.pathname === path || (path !== "/user/dashboard" && location.pathname.startsWith(path));
+              return (
+                <NavLink
+                  key={path}
+                  to={path}
+                  onClick={() => setMobileOpen(false)}
+                  className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                    active
+                      ? "bg-teal-600 text-white shadow-md font-semibold"
+                      : "text-slate-300 hover:bg-navy-800/70 hover:text-white"
+                  }`}
+                >
+                  <Icon className={`h-4 w-4 ${active ? "text-white" : "text-slate-400"}`} />
+                  <span>{t(key)}</span>
+                </NavLink>
+              );
+            })}
+          </nav>
+        </div>
+
+        {/* Profile Card & Language in Sidebar Footer */}
+        <div className="p-4 border-t border-navy-800/80 bg-navy-950/50">
+          <div className="flex items-center justify-between gap-3 mb-3">
+            <Link
+              to="/user/profile"
+              className="flex items-center gap-2.5 overflow-hidden group hover:opacity-90 transition-opacity"
+            >
+              <div className="h-9 w-9 rounded-full bg-teal-500/20 border border-teal-500/40 flex items-center justify-center text-teal-300 font-bold text-sm">
+                {session?.name ? session.name[0].toUpperCase() : "U"}
+              </div>
+              <div className="truncate">
+                <p className="text-xs font-semibold text-white truncate">{session?.name || "Citizen User"}</p>
+                <p className="text-[11px] text-slate-400 truncate">{profile?.state || "India"} · {profile?.occupation || "Citizen"}</p>
+              </div>
+            </Link>
+            <button
+              onClick={logout}
+              title={t("logout")}
+              className="p-2 rounded-lg text-slate-400 hover:text-rose-400 hover:bg-navy-800 transition-colors"
+            >
+              <LogOut className="h-4 w-4" />
+            </button>
+          </div>
+
+          <div className="pt-2 border-t border-navy-800/60 flex items-center justify-between text-xs text-slate-400">
+            <span className="flex items-center gap-1.5">
+              <Globe className="h-3.5 w-3.5 text-teal-400" />
+              Language:
+            </span>
+            <div className="flex items-center gap-1 bg-navy-800 rounded-lg p-0.5">
+              <button
+                onClick={() => setLanguage("en")}
+                className={`px-2 py-1 rounded-md text-[11px] font-semibold transition-all ${
+                  language === "en" ? "bg-teal-600 text-white shadow-sm" : "hover:text-white"
+                }`}
+              >
+                EN
+              </button>
+              <button
+                onClick={() => setLanguage("te")}
+                className={`px-2 py-1 rounded-md text-[11px] font-semibold transition-all ${
+                  language === "te" ? "bg-teal-600 text-white shadow-sm" : "hover:text-white"
+                }`}
+              >
+                తెలుగు
+              </button>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      {/* Main Content Area */}
+      <div className="flex-1 flex flex-col min-w-0">
+        {/* Top Navbar */}
+        <header className="sticky top-0 z-30 flex items-center justify-between border-b border-slate-200/80 bg-white/90 backdrop-blur-md px-6 py-3.5 shadow-subtle">
+          <div className="flex items-center gap-3">
+            <button
+              className="p-2 rounded-xl border border-slate-200 md:hidden hover:bg-slate-100 text-slate-700"
+              onClick={() => setMobileOpen(true)}
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+            <div>
+              <p className="text-xs font-semibold text-teal-700 uppercase tracking-wider hidden sm:block">
+                {t("brand")}
+              </p>
+              <h2 className="text-base font-bold text-navy-900 truncate">
+                {t(navItems.find((n) => location.pathname.startsWith(n.path))?.key || "dashboard")}
+              </h2>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            {/* Language Switch Button */}
+            <button
+              onClick={() => setLanguage(language === "en" ? "te" : "en")}
+              className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition-colors shadow-sm"
+            >
+              <Globe className="h-3.5 w-3.5 text-teal-600" />
+              <span>{language === "en" ? "తెలుగు" : "English"}</span>
+            </button>
+
+            {/* Quick Schemes Search shortcut */}
+            <Link
+              to="/user/schemes"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-navy-800 px-3.5 py-1.5 text-xs font-semibold text-white hover:bg-navy-900 transition-all shadow-sm"
+            >
+              <BookOpen className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">{t("browse")}</span>
+            </Link>
+          </div>
+        </header>
+
+        {/* Dynamic Page Content */}
+        <main className="flex-1 p-6 md:p-8 max-w-7xl w-full mx-auto">
+          <Outlet />
+        </main>
+      </div>
+    </div>
+  );
+}

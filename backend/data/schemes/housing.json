@@ -1,0 +1,151 @@
+[
+  {
+    "id": 501,
+    "name": "Pradhan Mantri Awas Yojana - Gramin",
+    "shortName": "PMAY-G",
+    "category": "Housing",
+    "subCategory": "Rural Housing Assistance",
+    "beneficiaries": ["Houseless Rural Families", "Families Living in Kutcha / Dilapidated Houses"],
+    "schemeType": "Direct Capital Grant",
+    "description": "Flagship rural housing scheme providing financial assistance to eligible rural households for construction of a permanent pucca house with basic amenities.",
+    "benefit": {
+      "type": "monetary",
+      "amount": 130000,
+      "currency": "INR",
+      "frequency": "In 3-4 construction stage installments",
+      "installments": 4,
+      "description": "₹1,20,000 in plain areas and ₹1,30,000 in hilly/difficult/IAP districts directly transferred via DBT. Additional ₹12,000 for toilet construction under SBM-G + 90-95 days unskilled wage support under MGNREGS (approx ₹25,000)."
+    },
+    "eligibility": {
+      "general": [
+        "Rural households with no pucca house or living in zero/one/two room kutcha houses",
+        "Identified through Socio-Economic Caste Census (SECC 2011) / Awaas+ list",
+        "Verified by Gram Sabha"
+      ],
+      "incomeLimit": 180000,
+      "age": "18-70",
+      "gender": "Any",
+      "occupation": "Any",
+      "state": "All",
+      "otherConditions": [
+        "Family must not own a motorised two/three/four-wheeler or mechanised agricultural equipment",
+        "No family member should be a government employee"
+      ]
+    },
+    "eligibilityChecks": [
+      { "key": "isRuralHouselessOrKutcha", "type": "boolean", "required": true, "question": "Do you live in a rural area and currently lack a permanent pucca concrete house?" },
+      { "key": "isListedInAwaasPlus", "type": "boolean", "required": true, "question": "Is your family registered in the Gram Panchayat Awaas+ or SECC housing deprivation list?" },
+      { "key": "noGovtEmployeeInFamily", "type": "boolean", "required": true, "question": "Are you confirmed to have no government employees or motorized 4-wheelers in your family?" }
+    ],
+    "requiredDocuments": [
+      "Aadhaar Card of all adult family members",
+      "Aadhaar-seeded Bank Account Passbook",
+      "MGNREGA Job Card Number",
+      "Land / House site ownership document or consent letter",
+      "Photographs of current kutcha house site"
+    ],
+    "applicationProcess": [
+      "Registration done through Gram Panchayat / Village Secretariat using Awaas+ mobile app by Panchayat Secretary",
+      "Gram Sabha verifies beneficiary eligibility list through social audit",
+      "Block Development Officer (BDO) issues Geo-tagged sanction order",
+      "Direct Benefit Transfer released in 3-4 installments upon geo-tagged photo verification at plinth, lintel, and completion stages"
+    ],
+    "applicationWindow": { "type": "Year Round", "details": "Continuous verification and target allocation as per state targets" },
+    "processingTime": { "estimated": "45-90 days for sanction", "dependsOn": ["Gram Sabha verification and geo-tagging"] },
+    "verification": ["AwaasApp Geo-tagging", "Gram Sabha Social Audit", "Block Development Officer"],
+    "officialLinks": {
+      "schemePortal": "https://pmayg.nic.in",
+      "myScheme": "https://www.myscheme.gov.in/schemes/pmay-g",
+      "ministry": "https://rural.gov.in"
+    },
+    "modeOfApplication": ["Gram Panchayat", "Village Secretariat", "AwaasApp"],
+    "ministry": "Ministry of Rural Development",
+    "governmentLevel": "Central",
+    "availableStates": ["All"],
+    "status": "Active",
+    "tags": ["housing", "pmay gramin", "rural house", "pucca house", "120000 grant", "awaas plus"],
+    "searchKeywords": ["pmay g", "pradhan mantri awas yojana gramin", "rural housing grant", "awaas plus list", "1.3 lakh house"],
+    "relatedSchemes": [502, 503],
+    "aiContext": "Provides ₹1.20 Lakh (plain) / ₹1.30 Lakh (hilly) + ₹12,000 toilet grant + 90 days MGNREGA wages to build a pucca rural house. Geo-tagged DBT verification.",
+    "faqs": [
+      { "question": "Who verifies the construction progress for installment release?", "answer": "The Gram Rozgar Sahayak / Panchayat Secretary uploads geo-tagged photographs of the house at each stage via the AwaasApp." },
+      { "question": "Is toilet assistance included?", "answer": "Yes, an additional ₹12,000 is provided through Swachh Bharat Mission (Gramin) for building a dedicated attached toilet." }
+    ],
+    "lastUpdated": "2026-07-01",
+    "lastVerified": "2026-07-01"
+  },
+  {
+    "id": 502,
+    "name": "Pradhan Mantri Awas Yojana - Urban 2.0",
+    "shortName": "PMAY-U 2.0",
+    "category": "Housing",
+    "subCategory": "Urban Housing & Interest Subsidy",
+    "beneficiaries": ["Economically Weaker Section (EWS)", "Low Income Group (LIG)", "Middle Income Group (MIG)", "Urban Families"],
+    "schemeType": "Credit Linked Subsidy & Financial Assistance",
+    "description": "Urban housing scheme aimed at providing all-weather pucca houses to eligible urban families through Beneficiary-Led Construction, Affordable Housing in Partnership, and Interest Subsidy Schemes.",
+    "benefit": {
+      "type": "subsidy",
+      "amount": 250000,
+      "currency": "INR",
+      "frequency": "Subsidy / Grant",
+      "installments": 3,
+      "description": "Central assistance of ₹1.50 Lakh to ₹2.50 Lakh under Beneficiary Led Construction (BLC), or Interest Subsidy Scheme (ISS) of up to ₹1.80 Lakh on home loans for EWS/LIG/MIG segments."
+    },
+    "eligibility": {
+      "general": [
+        "Beneficiary family should not own a pucca house in their name anywhere in India",
+        "EWS household annual income up to ₹3,00,000",
+        "LIG household annual income ₹3,00,001 to ₹6,00,000; MIG up to ₹9,00,000",
+        "Female head of household must be co-owner/owner in property registration"
+      ],
+      "incomeLimit": 900000,
+      "age": "18-70",
+      "gender": "Any",
+      "occupation": "Any",
+      "state": "All",
+      "otherConditions": ["Must reside in statutory towns as per Census 2011 or notified planning areas"]
+    },
+    "eligibilityChecks": [
+      { "key": "isUrbanResidentNoPuccaHouse", "type": "boolean", "required": true, "question": "Do you live in an urban municipal area and have no pucca house anywhere in India?" },
+      { "key": "hasIncomeWithinPMAYULimits", "type": "boolean", "required": true, "question": "Is your annual family income within ₹9 Lakh (EWS/LIG/MIG limits)?" },
+      { "key": "hasFemaleOwnershipOrCoOwnership", "type": "boolean", "required": true, "question": "Is a female family member listed as sole owner or co-owner of the property?" }
+    ],
+    "requiredDocuments": [
+      "Aadhaar Card of all family members",
+      "Income Certificate / Salary Slips / Form 16 / ITR",
+      "Land Title / Patta / Approved House Building Plan (for BLC component)",
+      "Bank Account Statement & Loan Sanction Letter (for Interest Subsidy component)",
+      "Affidavit affirming no other pucca property owned in India"
+    ],
+    "applicationProcess": [
+      "Visit the PMAY-Urban portal (pmaymis.gov.in) or visit nearest Citizen Service Centre (CSC) / Municipal Corporation office",
+      "Select 'Citizen Assessment' and choose appropriate vertical (BLC, ISS, or AHP)",
+      "Enter Aadhaar number and fill demographic, income, and existing shelter details",
+      "Upload land and income documents; Municipality conducts site verification",
+      "Direct Benefit Transfer / Interest subsidy credited directly into loan account"
+    ],
+    "applicationWindow": { "type": "Year Round", "details": "Online applications open under PMAY-U 2.0 mission guidelines" },
+    "processingTime": { "estimated": "60-90 days", "dependsOn": ["Urban Local Body town planning approval"] },
+    "verification": ["Municipal Corporation / ULB Town Planning Cell", "State Level Nodal Agency (SLNA)", "National Housing Bank (NHB) / HUDCO"],
+    "officialLinks": {
+      "schemePortal": "https://pmaymis.gov.in",
+      "myScheme": "https://www.myscheme.gov.in/schemes/pmay-u",
+      "ministry": "https://mohua.gov.in"
+    },
+    "modeOfApplication": ["Online (pmaymis.gov.in)", "CSC", "Municipal Corporation Office"],
+    "ministry": "Ministry of Housing and Urban Affairs",
+    "governmentLevel": "Central",
+    "availableStates": ["All"],
+    "status": "Active",
+    "tags": ["housing", "pmay urban", "home loan subsidy", "ews lig", "pucca house urban", "clss"],
+    "searchKeywords": ["pmay urban", "pmay u 2.0", "urban home loan subsidy", "pradhan mantri awas yojana urban", "ews house 2.5 lakh"],
+    "relatedSchemes": [501],
+    "aiContext": "Central urban housing grant up to ₹2.50 Lakh for self-construction or interest subsidy on home loans for urban families earning up to ₹9 Lakh without a pucca house.",
+    "faqs": [
+      { "question": "Is female ownership mandatory in PMAY-U?", "answer": "Yes, for EWS and LIG categories, the house must be registered in the name of the female head or in joint ownership with husband." },
+      { "question": "Can I get subsidy if I already bought a flat via home loan?", "answer": "Under the Interest Subsidy Scheme (ISS), the upfront subsidy is credited directly to your loan account reducing EMIs." }
+    ],
+    "lastUpdated": "2026-08-01",
+    "lastVerified": "2026-08-01"
+  }
+]

@@ -1,0 +1,46 @@
+from app.models.ai import AIChatRequest, AIChatResponse, AIExplainRequest, AIExplainResponse
+from app.models.notification import NotificationItem, NotificationRequest, NotificationResponse
+from app.models.profile import UserProfile
+from app.models.scheme import (
+    ComparisonSummary,
+    DocumentChecklistResponse,
+    DocumentItem,
+    DocumentVerificationRequest,
+    DocumentVerificationResponse,
+    EligibilityCheckResponse,
+    EligibilityQuestion,
+    EligibilityRequest,
+    OtherRelevantScheme,
+    PersonalizedRecommendationResponse,
+    RecommendedScheme,
+    SchemeComparisonRequest,
+    SchemeComparisonResponse,
+    SchemeResponse,
+    SubmittedDocument,
+)
+
+__all__ = [
+    "AIChatRequest",
+    "AIChatResponse",
+    "AIExplainRequest",
+    "AIExplainResponse",
+    "NotificationItem",
+    "NotificationRequest",
+    "NotificationResponse",
+    "UserProfile",
+    "ComparisonSummary",
+    "DocumentChecklistResponse",
+    "DocumentItem",
+    "DocumentVerificationRequest",
+    "DocumentVerificationResponse",
+    "EligibilityCheckResponse",
+    "EligibilityQuestion",
+    "EligibilityRequest",
+    "OtherRelevantScheme",
+    "PersonalizedRecommendationResponse",
+    "RecommendedScheme",
+    "SchemeComparisonRequest",
+    "SchemeComparisonResponse",
+    "SchemeResponse",
+    "SubmittedDocument",
+]

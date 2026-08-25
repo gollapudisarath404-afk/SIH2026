@@ -1,0 +1,34 @@
+[
+  {
+    "id": "ann-1",
+    "title": "PM-KISAN 17th Installment Disbursed",
+    "message": "Direct benefit transfer of ₹2,000 released for eligible landholding farmer families with completed e-KYC and Aadhaar-seeded bank accounts.",
+    "priority": "High",
+    "schemeId": 101,
+    "createdAt": "2026-08-01T10:00:00+05:30"
+  },
+  {
+    "id": "ann-2",
+    "title": "Ayushman Bharat PM-JAY Coverage Expansion",
+    "message": "Ayushman Vay Vandana Card now available for all senior citizens aged 70 and above, offering ₹5 lakh health cover regardless of family income.",
+    "priority": "High",
+    "schemeId": 301,
+    "createdAt": "2026-08-10T14:30:00+05:30"
+  },
+  {
+    "id": "ann-3",
+    "title": "National Scholarship Portal (NSP) Applications Open",
+    "message": "Online application window for Pre-Matric, Post-Matric, and Merit-cum-Means scholarships for the academic year 2026-27 is now open.",
+    "priority": "Medium",
+    "schemeId": 201,
+    "createdAt": "2026-08-15T09:00:00+05:30"
+  },
+  {
+    "id": "ann-4",
+    "title": "Aadhaar-Bank Account Seeding Mandatory",
+    "message": "Ensure your bank account is seeded with Aadhaar and NPCI mapped to receive direct benefit transfer (DBT) subsidies without delay.",
+    "priority": "Low",
+    "schemeId": null,
+    "createdAt": "2026-08-20T11:00:00+05:30"
+  }
+]

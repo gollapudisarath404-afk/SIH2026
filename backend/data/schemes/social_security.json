@@ -1,0 +1,218 @@
+[
+  {
+    "id": 601,
+    "name": "Atal Pension Yojana",
+    "shortName": "APY",
+    "category": "Social Security",
+    "subCategory": "Old Age Pension Scheme",
+    "beneficiaries": ["Unorganized Sector Workers", "Gig Workers", "Self-employed Citizens", "All Citizens aged 18-40"],
+    "schemeType": "Guaranteed Monthly Pension",
+    "description": "Government-backed guaranteed pension scheme for all Indian citizens, primarily targeted at unorganized sector workers, providing a fixed monthly pension from age 60.",
+    "benefit": {
+      "type": "monetary",
+      "amount": 5000,
+      "currency": "INR",
+      "frequency": "Monthly for lifetime after age 60",
+      "installments": 12,
+      "description": "Guaranteed minimum monthly pension of ₹1,000, ₹2,000, ₹3,000, ₹4,000, or ₹5,000 per month from age 60 until death, followed by same pension to spouse, and return of full pension corpus to nominee."
+    },
+    "eligibility": {
+      "general": [
+        "Open to all Indian citizens having a savings bank account or post office account",
+        "Age between 18 and 40 years at the time of entry",
+        "Monthly auto-debit facility from bank account must be maintained"
+      ],
+      "incomeLimit": null,
+      "age": "18-40",
+      "gender": "Any",
+      "occupation": "Any",
+      "state": "All",
+      "otherConditions": [
+        "Income tax payers are not eligible to join APY (as per government notification)"
+      ]
+    },
+    "eligibilityChecks": [
+      { "key": "isBetween18and40Years", "type": "boolean", "required": true, "question": "Are you between 18 and 40 years of age?" },
+      { "key": "hasSavingsAccountWithAutoDebit", "type": "boolean", "required": true, "question": "Do you hold an active Savings Bank or Post Office account for monthly auto-debit?" },
+      { "key": "isNonIncomeTaxPayer", "type": "boolean", "required": true, "question": "Are you a non-taxpayer (not filed/paid income tax)?" }
+    ],
+    "requiredDocuments": [
+      "Aadhaar Card",
+      "Savings Bank Account / Post Office Account Passbook",
+      "Active Mobile number linked to bank account",
+      "Nominee Details (Aadhaar / Spouse details)"
+    ],
+    "applicationProcess": [
+      "Visit your bank branch, post office, or log in to Net Banking / Mobile Banking app",
+      "Fill APY Registration Form and choose desired pension amount (₹1,000 to ₹5,000/month)",
+      "Provide Aadhaar and nominee details",
+      "Set up monthly auto-debit consent; bank generates Permanent Retirement Account Number (PRAN) Card",
+      "Download APY e-PRAN card from NSDL / Protean portal (npscra.nsdl.co.in)"
+    ],
+    "applicationWindow": { "type": "Year Round", "details": "Enrollment open throughout the year at all banks" },
+    "processingTime": { "estimated": "Instant to 3 working days", "dependsOn": ["Bank PRAN generation"] },
+    "verification": ["Pension Fund Regulatory and Development Authority (PFRDA)", "Bank KYC Check", "NSDL / Protean CRA"],
+    "officialLinks": {
+      "schemePortal": "https://www.npscra.nsdl.co.in/scheme-details.php",
+      "myScheme": "https://www.myscheme.gov.in/schemes/apy",
+      "ministry": "https://pfrda.org.in"
+    },
+    "modeOfApplication": ["Bank Branch", "Internet Banking", "Post Office", "Protean Portal"],
+    "ministry": "Department of Financial Services, Ministry of Finance / PFRDA",
+    "governmentLevel": "Central",
+    "availableStates": ["All"],
+    "status": "Active",
+    "tags": ["pension", "apy", "atal pension", "5000 per month", "retirement", "pfrda"],
+    "searchKeywords": ["atal pension yojana", "apy pension 5000", "government pension scheme", "old age pension 18-40", "pfrda apy"],
+    "relatedSchemes": [603, 604, 606],
+    "aiContext": "Guaranteed lifetime monthly pension of ₹1,000 to ₹5,000 after age 60 for citizens joining between 18-40 years. Modest monthly contributions auto-debited from bank account. Taxpayers excluded.",
+    "faqs": [
+      { "question": "What happens after the subscriber's death after age 60?", "answer": "The exact same pension amount is paid to the spouse for life. After the demise of both, the accumulated corpus is returned to the nominee." },
+      { "question": "Can I increase or decrease my pension amount later?", "answer": "Yes, subscribers can change their pension tier (e.g. from ₹1,000 to ₹5,000) once every financial year in April." }
+    ],
+    "lastUpdated": "2026-08-01",
+    "lastVerified": "2026-08-01"
+  },
+  {
+    "id": 602,
+    "name": "Sukanya Samriddhi Yojana",
+    "shortName": "SSY",
+    "category": "Social Security",
+    "subCategory": "Girl Child Welfare & Small Savings",
+    "beneficiaries": ["Girl Children below 10 years", "Parents / Guardians of Girl Child"],
+    "schemeType": "High Interest Small Savings Scheme",
+    "description": "Beti Bachao Beti Padhao campaign initiative offering a government-backed high-interest savings scheme exclusively for the education and marriage of the girl child.",
+    "benefit": {
+      "type": "subsidy",
+      "amount": "High Sovereign Interest (8.2% p.a.) + 100% Tax Exemption (EEE)",
+      "currency": "INR",
+      "frequency": "Compounded Annually",
+      "installments": null,
+      "description": "Attractive 8.2% annual interest rate (highest among small savings). Maximum deposit ₹1.50 Lakh per financial year. Complete tax exemption under Section 80C on deposit, interest, and maturity amount (EEE status)."
+    },
+    "eligibility": {
+      "general": [
+        "Account opened by the natural/legal guardian in the name of a girl child",
+        "Girl child must be below 10 years of age at the time of account opening",
+        "Maximum two accounts per family (allowed for triplets/twins with certificate)"
+      ],
+      "incomeLimit": null,
+      "age": "0-10",
+      "gender": "Female",
+      "occupation": "Any",
+      "state": "All",
+      "otherConditions": ["Deposit required for 15 years from account opening date; matures in 21 years"]
+    },
+    "eligibilityChecks": [
+      { "key": "isGirlChildUnder10", "type": "boolean", "required": true, "question": "Is the girl child below 10 years of age?" },
+      { "key": "isWithinTwoGirlsPerFamily", "type": "boolean", "required": true, "question": "Are there no more than 2 existing SSY accounts opened in your family?" }
+    ],
+    "requiredDocuments": [
+      "Birth Certificate of the Girl Child (mentioning child and parents' names)",
+      "Aadhaar Card and PAN Card of the Parent / Guardian",
+      "Address Proof (Passport / Voter ID / Utility Bill of Parent)",
+      "Passport size photographs of child and parent"
+    ],
+    "applicationProcess": [
+      "Visit any Post Office or authorized Commercial Bank branch (SBI, PNB, HDFC, ICICI, etc.)",
+      "Fill Sukanya Samriddhi Yojana (SSY) Account Opening Form",
+      "Submit girl child birth certificate and guardian KYC documents",
+      "Deposit minimum initial amount of ₹250",
+      "Receive SSY Passbook containing account number and deposit ledger"
+    ],
+    "applicationWindow": { "type": "Year Round", "details": "Open anytime until child completes 10 years of age" },
+    "processingTime": { "estimated": "Same day / 1-2 working days", "dependsOn": ["Post office / Bank branch processing"] },
+    "verification": ["Post Office / Bank Branch KYC", "Birth Certificate Verification"],
+    "officialLinks": {
+      "schemePortal": "https://www.indiapost.gov.in/Financial/Pages/Content/Sukanya-Samriddhi-Account.aspx",
+      "myScheme": "https://www.myscheme.gov.in/schemes/ssy",
+      "ministry": "https://financialservices.gov.in"
+    },
+    "modeOfApplication": ["Post Office Branch", "Designated Public/Private Bank Branches"],
+    "ministry": "Ministry of Finance / Ministry of Women and Child Development",
+    "governmentLevel": "Central",
+    "availableStates": ["All"],
+    "status": "Active",
+    "tags": ["girl child", "sukanya samriddhi", "ssy", "8.2 percent interest", "tax free 80c", "education"],
+    "searchKeywords": ["sukanya samriddhi yojana", "ssy account", "girl child savings 8.2", "beti bachao beti padhao account", "tax free girl savings"],
+    "relatedSchemes": [204, 601],
+    "aiContext": "High-interest (8.2%) government small savings scheme for girl children below 10 years. Max ₹1.5L/year deposit with triple tax exemption (EEE) under Section 80C. Matures at 21 years.",
+    "faqs": [
+      { "question": "What is the minimum and maximum deposit per year?", "answer": "Minimum deposit is ₹250 per year and maximum deposit is ₹1,50,000 per financial year." },
+      { "question": "Can funds be withdrawn for higher education?", "answer": "Yes, partial withdrawal up to 50% of the balance is permitted once the girl child turns 18 for higher education fees." }
+    ],
+    "lastUpdated": "2026-08-01",
+    "lastVerified": "2026-08-01"
+  },
+  {
+    "id": 605,
+    "name": "Pradhan Mantri Ujjwala Yojana 2.0",
+    "shortName": "PMUY 2.0",
+    "category": "Social Security",
+    "subCategory": "Clean Cooking Energy",
+    "beneficiaries": ["Adult Women of Poor Households", "BPL / SC / ST / Most Backward Classes / PMAY Families"],
+    "schemeType": "Free LPG Connection & Targeted Subsidy",
+    "description": "Provides deposit-free LPG gas connections along with free first refill and hotplate (stove) to women belonging to poor and deprived households across India.",
+    "benefit": {
+      "type": "subsidy",
+      "amount": "Free Connection (Worth ₹1,600) + ₹300/cylinder DBT subsidy",
+      "currency": "INR",
+      "frequency": "Per LPG Refill (up to 12 refills/year)",
+      "installments": null,
+      "description": "Deposit-free LPG connection including security deposit of cylinder, regulator, safety hose, domestic gas consumer card, and installation charges. Plus ₹300 direct cash subsidy per 14.2 kg LPG cylinder directly to bank account for up to 12 refills annually."
+    },
+    "eligibility": {
+      "general": [
+        "Applicant must be an adult woman (18 years and above)",
+        "No other existing LPG connection in the same household",
+        "Must belong to SC/ST, PMAY (Gramin), Antyodaya Anna Yojana (AAY), Forest Dwellers, Most Backward Classes, or 14-point declaration poor household"
+      ],
+      "incomeLimit": 200000,
+      "age": "18-70",
+      "gender": "Female",
+      "occupation": "Any",
+      "state": "All",
+      "otherConditions": ["Migrant workers can apply with self-declaration for address proof"]
+    },
+    "eligibilityChecks": [
+      { "key": "isAdultWoman", "type": "boolean", "required": true, "question": "Is the applicant an adult female (aged 18 or above)?" },
+      { "key": "noExistingLPGConnectionInHome", "type": "boolean", "required": true, "question": "Does your household currently have NO other LPG connection from any OMC?" },
+      { "key": "isPoorOrBPLHousehold", "type": "boolean", "required": true, "question": "Does your family belong to BPL / Ration Card / SC / ST / PMAY poor category?" }
+    ],
+    "requiredDocuments": [
+      "Aadhaar Card of Applicant and all adult family members listed in ration card",
+      "Ration Card / Family Composition Certificate (or self-declaration for migrants)",
+      "Aadhaar-seeded Bank Account Passbook",
+      "Mobile number for booking refills"
+    ],
+    "applicationProcess": [
+      "Visit PMUY portal (pmuy.gov.in) or visit nearest Indane, Bharatgas, or HP Gas distributor",
+      "Submit Ujjwala 2.0 application form with KYC documents",
+      "Oil Marketing Company (OMC) verifies de-duplication across all 3 oil companies",
+      "Distributor installs LPG stove and gas cylinder at beneficiary's home with safety briefing"
+    ],
+    "applicationWindow": { "type": "Year Round", "details": "Continuous application under PMUY 2.0 extension" },
+    "processingTime": { "estimated": "7-14 days", "dependsOn": ["OMC de-duplication check and distributor delivery"] },
+    "verification": ["Oil Marketing Companies (IOCL / BPCL / HPCL)", "De-duplication Database", "Aadhaar e-KYC"],
+    "officialLinks": {
+      "schemePortal": "https://www.pmuy.gov.in",
+      "myScheme": "https://www.myscheme.gov.in/schemes/pmuy",
+      "ministry": "https://mopng.gov.in"
+    },
+    "modeOfApplication": ["Online (pmuy.gov.in)", "LPG Gas Agency Distributor (Indane/Bharatgas/HP)"],
+    "ministry": "Ministry of Petroleum and Natural Gas",
+    "governmentLevel": "Central",
+    "availableStates": ["All"],
+    "status": "Active",
+    "tags": ["gas cylinder", "ujjwala", "pmuy", "free lpg", "women welfare", "300 subsidy"],
+    "searchKeywords": ["pm ujjwala yojana", "free gas cylinder", "pmuy 2.0", "lpg connection subsidy", "300 cylinder subsidy"],
+    "relatedSchemes": [501, 601],
+    "aiContext": "Provides deposit-free LPG gas connection to adult women in poor households, free first refill + stove, and ₹300/cylinder DBT subsidy for up to 12 refills per year.",
+    "faqs": [
+      { "question": "Do migrant workers need a local ration card to apply?", "answer": "No, under Ujjwala 2.0, migrants can submit a simple self-declaration for both family composition and address proof." },
+      { "question": "How much subsidy is credited per refill?", "answer": "A targeted subsidy of ₹300 per 14.2 kg LPG cylinder is credited directly to the beneficiary's Aadhaar-linked bank account for up to 12 refills per year." }
+    ],
+    "lastUpdated": "2026-08-01",
+    "lastVerified": "2026-08-01"
+  }
+]

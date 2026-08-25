@@ -1,0 +1,289 @@
+[
+  {
+    "id": 101,
+    "name": "Pradhan Mantri Kisan Samman Nidhi",
+    "shortName": "PM-KISAN",
+    "category": "Agriculture",
+    "subCategory": "Direct Income Support",
+    "beneficiaries": ["Small Farmers", "Marginal Farmers", "Landholding Farmers"],
+    "schemeType": "Direct Benefit Transfer (DBT)",
+    "description": "Central Sector scheme providing income support of ₹6,000 per year in three equal installments to all landholding farmer families across India.",
+    "benefit": {
+      "type": "monetary",
+      "amount": 6000,
+      "currency": "INR",
+      "frequency": "Yearly",
+      "installments": 3,
+      "description": "₹6,000 per year transferred directly into the Aadhaar-seeded bank account in 3 installments of ₹2,000 every 4 months."
+    },
+    "eligibility": {
+      "general": [
+        "Farmer family must hold cultivable land in their name",
+        "Must complete e-KYC on the PM-KISAN portal",
+        "Bank account must be linked and mapped with Aadhaar & NPCI"
+      ],
+      "incomeLimit": null,
+      "age": "18-75",
+      "gender": "Any",
+      "occupation": "Farmer",
+      "state": "All",
+      "otherConditions": [
+        "Institutional landholders and serving/retired government officers are excluded",
+        "Income tax payers from last assessment year are excluded"
+      ]
+    },
+    "eligibilityChecks": [
+      { "key": "isCultivableLandHolder", "type": "boolean", "required": true, "question": "Do you or your family own cultivable agricultural land registered in your name?" },
+      { "key": "hasCompletedEKYC", "type": "boolean", "required": true, "question": "Have you completed or are you willing to complete OTP/Biometric e-KYC?" },
+      { "key": "isIncomeTaxPayer", "type": "boolean", "required": false, "question": "Did you pay income tax in the last financial assessment year?" }
+    ],
+    "requiredDocuments": [
+      "Aadhaar Card",
+      "Land Ownership Documents (Khata / Pattadar Passbook / RoR)",
+      "Aadhaar-seeded Bank Passbook",
+      "Mobile number linked with Aadhaar"
+    ],
+    "applicationProcess": [
+      "Visit the official PM-KISAN portal (pmkisan.gov.in) or visit nearest CSC / MeeSeva center",
+      "Click on 'New Farmer Registration' in the Farmers Corner",
+      "Enter Aadhaar Number, Select State, and Verify via OTP",
+      "Fill land record details (Survey number, Khasra, Khata number, Area in Hectares)",
+      "Upload land documents and submit for state revenue department verification",
+      "Track status online using Aadhaar or Registration Number"
+    ],
+    "applicationWindow": { "type": "Year Round", "details": "Continuous online registration available on portal" },
+    "processingTime": { "estimated": "30-60 days", "dependsOn": ["District Revenue Department verification", "NPCI bank mapping"] },
+    "verification": ["State Revenue Department", "Land Records Verification", "Aadhaar e-KYC", "Public Financial Management System (PFMS)"],
+    "officialLinks": {
+      "schemePortal": "https://pmkisan.gov.in",
+      "myScheme": "https://www.myscheme.gov.in/schemes/pm-kisan",
+      "ministry": "https://agricoop.nic.in"
+    },
+    "modeOfApplication": ["Online", "Offline (CSC / Village Secretariat / MeeSeva)"],
+    "ministry": "Ministry of Agriculture and Farmers Welfare",
+    "governmentLevel": "Central",
+    "availableStates": ["All"],
+    "status": "Active",
+    "tags": ["farmer", "income support", "dbt", "kisan", "pm kisan"],
+    "searchKeywords": ["pm kisan", "kisan samman nidhi", "6000", "farmer grant", "dbt agriculture"],
+    "relatedSchemes": [102, 103, 105],
+    "aiContext": "Provides ₹6,000/year in 3 installments of ₹2,000 for landholder farmers. Requires land ownership records, Aadhaar e-KYC, and active bank account. Income tax payers excluded.",
+    "faqs": [
+      { "question": "Can tenant farmers apply for PM-KISAN?", "answer": "No, PM-KISAN requires ownership of cultivable land records in the applicant's or family's name." },
+      { "question": "How often are the installments paid?", "answer": "Every 4 months: April-July, August-November, and December-March." },
+      { "question": "Is e-KYC mandatory?", "answer": "Yes, e-KYC via OTP on PM-KISAN portal or biometric at CSC is mandatory." }
+    ],
+    "lastUpdated": "2026-08-01",
+    "lastVerified": "2026-08-01"
+  },
+  {
+    "id": 102,
+    "name": "Pradhan Mantri Fasal Bima Yojana",
+    "shortName": "PMFBY",
+    "category": "Agriculture",
+    "subCategory": "Crop Insurance",
+    "beneficiaries": ["Farmers", "Sharecroppers", "Tenant Farmers"],
+    "schemeType": "Insurance",
+    "description": "Comprehensive crop insurance scheme providing financial support and risk cover to farmers against crop failure due to non-preventable natural risks.",
+    "benefit": {
+      "type": "insurance",
+      "amount": "Full Sum Insured based on crop yield loss",
+      "currency": "INR",
+      "frequency": "Per Crop Season",
+      "installments": null,
+      "description": "Subsidized premium (2% for Kharif, 1.5% for Rabi, 5% for commercial/horticultural crops). Comprehensive coverage from pre-sowing to post-harvest losses."
+    },
+    "eligibility": {
+      "general": [
+        "All farmers growing notified crops in notified areas during the season",
+        "Includes sharecroppers and tenant farmers with insurable interest",
+        "Both loanee and non-loanee farmers are eligible"
+      ],
+      "incomeLimit": null,
+      "age": "18-70",
+      "gender": "Any",
+      "occupation": "Farmer",
+      "state": "All",
+      "otherConditions": ["Must apply before the seasonal cut-off date announced by state government"]
+    },
+    "eligibilityChecks": [
+      { "key": "isGrowingNotifiedCrop", "type": "boolean", "required": true, "question": "Are you cultivating a notified crop in a designated insured area?" },
+      { "key": "hasInsurableInterest", "type": "boolean", "required": true, "question": "Do you hold land ownership or recorded tenancy agreement for the cultivated crop?" }
+    ],
+    "requiredDocuments": [
+      "Aadhaar Card",
+      "Land Record Documents (RoR / Sowing Certificate from Patwari/VRO)",
+      "Bank Account Passbook",
+      "Tenancy / Crop Share Declaration (for tenant farmers)"
+    ],
+    "applicationProcess": [
+      "Visit PMFBY Portal (pmfby.gov.in), nearest CSC, or your designated bank branch",
+      "Select State, Season (Kharif/Rabi), and Year",
+      "Enter farmer details, crop sown, area in acres/hectares, and land survey number",
+      "Pay nominal farmer premium share online or at bank",
+      "Download Policy Receipt with coverage details"
+    ],
+    "applicationWindow": { "type": "Seasonal", "details": "Kharif window closes around July 31; Rabi window closes around December 31" },
+    "processingTime": { "estimated": "30-45 days post harvest assessment", "dependsOn": ["Crop Cutting Experiments (CCE) yield loss data"] },
+    "verification": ["District Agriculture Department", "Satellite & Weather Data", "Crop Cutting Experiments"],
+    "officialLinks": {
+      "schemePortal": "https://pmfby.gov.in",
+      "myScheme": "https://www.myscheme.gov.in/schemes/pmfby",
+      "ministry": "https://agricoop.nic.in"
+    },
+    "modeOfApplication": ["Online", "Bank Branch", "CSC / PACS"],
+    "ministry": "Ministry of Agriculture and Farmers Welfare",
+    "governmentLevel": "Central",
+    "availableStates": ["All"],
+    "status": "Active",
+    "tags": ["insurance", "crop insurance", "kharif", "rabi", "pmfby"],
+    "searchKeywords": ["crop insurance", "fasal bima", "pmfby", "drought insurance", "flood loss crop"],
+    "relatedSchemes": [101, 103],
+    "aiContext": "Covers crop damage from drought, floods, pests. Premium is 2% Kharif, 1.5% Rabi, 5% horticultural. Open to both loanee and non-loanee farmers.",
+    "faqs": [
+      { "question": "Is PMFBY mandatory for KCC loan holders?", "answer": "No, PMFBY has been made completely voluntary for all farmers, including loan holders." },
+      { "question": "How do I report localized crop damage like hailstorm?", "answer": "Report via the Crop Insurance Mobile App or to your bank within 72 hours of the event." }
+    ],
+    "lastUpdated": "2026-06-15",
+    "lastVerified": "2026-06-15"
+  },
+  {
+    "id": 103,
+    "name": "Kisan Credit Card Scheme",
+    "shortName": "KCC",
+    "category": "Agriculture",
+    "subCategory": "Institutional Credit",
+    "beneficiaries": ["Farmers", "Animal Husbandry Farmers", "Fisheries Farmers", "Self Help Groups"],
+    "schemeType": "Credit support",
+    "description": "Provides adequate and timely credit support from the banking system to farmers for cultivation and other agricultural needs with interest subvention.",
+    "benefit": {
+      "type": "subsidy",
+      "amount": 300000,
+      "currency": "INR",
+      "frequency": "Revolving Credit Line",
+      "installments": null,
+      "description": "Short-term credit up to ₹3 Lakh at an effective interest rate of only 4% per annum (with 3% prompt repayment incentive). Collateral-free up to ₹1.60 Lakh."
+    },
+    "eligibility": {
+      "general": [
+        "Individual farmers / Joint borrowers who are owner cultivators",
+        "Tenant farmers, oral lessees & sharecroppers",
+        "SHGs or Joint Liability Groups (JLGs) of farmers"
+      ],
+      "incomeLimit": null,
+      "age": "18-75",
+      "gender": "Any",
+      "occupation": "Farmer",
+      "state": "All",
+      "otherConditions": ["Applicants above 60 years need a co-applicant who is a legal heir"]
+    },
+    "eligibilityChecks": [
+      { "key": "isAgriculturalProducer", "type": "boolean", "required": true, "question": "Are you engaged in crop cultivation, dairy, poultry, or fisheries?" },
+      { "key": "hasGoodCreditHistory", "type": "boolean", "required": true, "question": "Do you have a clean credit record without willful defaults?" }
+    ],
+    "requiredDocuments": [
+      "Aadhaar Card / Voter ID / Driving License",
+      "Land Record Documents (Pattadar passbook / 7/12 extract / RoR)",
+      "Passport-size Photographs",
+      "Cropping pattern proof from local agriculture officer"
+    ],
+    "applicationProcess": [
+      "Download standard 1-page KCC Application Form from banking/ministry portal",
+      "Fill personal details, land particulars, and crop details",
+      "Submit form with land documents to your nearest Commercial, Cooperative, or Regional Rural Bank (RRB)",
+      "Bank processes KCC limit within 14 days and issues RuPay Kisan Credit Card"
+    ],
+    "applicationWindow": { "type": "Year Round", "details": "Applications accepted throughout the year at bank branches" },
+    "processingTime": { "estimated": "14 days", "dependsOn": ["Bank credit appraisal and land verification"] },
+    "verification": ["Bank Field Officer", "Revenue Land Records Search"],
+    "officialLinks": {
+      "schemePortal": "https://myscheme.gov.in/schemes/kcc",
+      "myScheme": "https://www.myscheme.gov.in/schemes/kcc",
+      "ministry": "https://agricoop.nic.in"
+    },
+    "modeOfApplication": ["Bank Branch", "Online Portal (PSB Loans in 59 Minutes / Bank Apps)"],
+    "ministry": "Ministry of Agriculture and Farmers Welfare",
+    "governmentLevel": "Central",
+    "availableStates": ["All"],
+    "status": "Active",
+    "tags": ["credit", "loan", "4 percent interest", "kcc", "rupay card"],
+    "searchKeywords": ["kisan credit card", "kcc loan", "farm loan 4 percent", "crop loan", "rupay kcc"],
+    "relatedSchemes": [101, 102],
+    "aiContext": "Provides up to ₹3 lakh crop loan at 4% effective interest upon timely repayment. Collateral-free up to ₹1.60 lakh. Also covers animal husbandry and fisheries.",
+    "faqs": [
+      { "question": "Can dairy and fish farmers get KCC?", "answer": "Yes, KCC limit of up to ₹2 Lakh is available specifically for animal husbandry, dairy, and fisheries." },
+      { "question": "Is collateral required for KCC?", "answer": "No collateral is required for loans up to ₹1.60 Lakh (or ₹3 Lakh under tie-up arrangements)." }
+    ],
+    "lastUpdated": "2026-07-01",
+    "lastVerified": "2026-07-01"
+  },
+  {
+    "id": 105,
+    "name": "Annadata Sukhibhava / Rythu Bharosa - PM KISAN",
+    "shortName": "Annadata Sukhibhava",
+    "category": "Agriculture",
+    "subCategory": "State Farmer Assistance",
+    "beneficiaries": ["Landowner Farmers in AP", "SC/ST/BC/Minority Tenant Farmers in AP"],
+    "schemeType": "Direct Benefit Transfer (DBT)",
+    "description": "Andhra Pradesh government scheme providing financial assistance to farmer families (combining PM-KISAN and state farmer support).",
+    "benefit": {
+      "type": "monetary",
+      "amount": 20000,
+      "currency": "INR",
+      "frequency": "Yearly",
+      "installments": 3,
+      "description": "Financial assistance per year distributed in installments across Kharif, Rabi, and Sankranti seasons."
+    },
+    "eligibility": {
+      "general": [
+        "Must be a resident farmer of Andhra Pradesh",
+        "Must hold agricultural land or be a certified tenant farmer (CCRC holder)",
+        "SC, ST, BC, and Minority tenant farmers are eligible even without land ownership"
+      ],
+      "incomeLimit": null,
+      "age": "18-75",
+      "occupation": "Farmer",
+      "state": "Andhra Pradesh",
+      "otherConditions": ["Must not be an institutional landholder or high-ranking public official"]
+    },
+    "eligibilityChecks": [
+      { "key": "isAPResident", "type": "boolean", "required": true, "question": "Are you a permanent resident of Andhra Pradesh?" },
+      { "key": "hasLandOrCCRC", "type": "boolean", "required": true, "question": "Do you have 1B land record or a valid Crop Cultivator Rights Card (CCRC)?" }
+    ],
+    "requiredDocuments": [
+      "Aadhaar Card",
+      "Pattadar Passbook / 1B Document or CCRC Agreement (Tenant farmers)",
+      "Bank Account Passbook (Aadhaar Seeded)",
+      "Ration Card / Rice Card"
+    ],
+    "applicationProcess": [
+      "Contact your Village Agriculture Assistant (VAA) at the Village Secretariat (Grama Sachivalayam)",
+      "Submit land records / CCRC tenant registration for e-Crop booking",
+      "Verify name in the beneficiary and social audit list displayed at the Grama Sachivalayam",
+      "Funds credited directly via DBT to Aadhaar-enabled bank accounts"
+    ],
+    "applicationWindow": { "type": "Seasonal", "details": "Enrolment verified prior to seasonal disbursement" },
+    "processingTime": { "estimated": "20-30 days", "dependsOn": ["e-Crop booking and VAA verification"] },
+    "verification": ["Village Agriculture Assistant", "Village Revenue Officer", "e-Crop Database"],
+    "officialLinks": {
+      "schemePortal": "https://annadathasukhibhava.ap.gov.in",
+      "myScheme": "https://www.myscheme.gov.in",
+      "ministry": "https://apagrisnet.gov.in"
+    },
+    "modeOfApplication": ["Grama Sachivalayam / Village Secretariat", "RBK Centers"],
+    "ministry": "Department of Agriculture, Government of Andhra Pradesh",
+    "governmentLevel": "State",
+    "availableStates": ["Andhra Pradesh"],
+    "status": "Active",
+    "tags": ["andhra pradesh", "annadata sukhibhava", "rythu bharosa", "farmer", "dbt"],
+    "searchKeywords": ["annadata sukhibhava", "ysr rythu bharosa", "ap farmer scheme", "andhra farmer scheme", "ccrc tenant farmer"],
+    "relatedSchemes": [101, 102],
+    "aiContext": "Andhra Pradesh state scheme providing financial assistance to landholder and SC/ST/BC/Minority tenant farmers with CCRC cards. Accessible at annadathasukhibhava.ap.gov.in.",
+    "faqs": [
+      { "question": "Are tenant farmers eligible in AP?", "answer": "Yes, SC, ST, BC, and Minority tenant farmers with valid CCRC (Crop Cultivator Rights Card) receive full ₹13,500 directly from state funds." },
+      { "question": "Where should I submit the application?", "answer": "At your local Grama Sachivalayam (Village Secretariat) or Rythu Bharosa Kendra (RBK)." }
+    ],
+    "lastUpdated": "2026-05-01",
+    "lastVerified": "2026-05-01"
+  }
+]

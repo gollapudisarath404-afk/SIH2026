@@ -1,0 +1,8 @@
+[
+  { "id": "agriculture", "name": "Agriculture", "icon": "Sprout", "description": "Schemes for farmers, crop insurance, and agricultural credit" },
+  { "id": "education", "name": "Education", "icon": "GraduationCap", "description": "Scholarships, skill development, and higher education aid" },
+  { "id": "health", "name": "Health", "icon": "HeartPulse", "description": "Health insurance, maternal care, and medical assistance" },
+  { "id": "employment", "name": "Employment", "icon": "Briefcase", "description": "Self-employment loans, wage employment, and skill training" },
+  { "id": "housing", "name": "Housing", "icon": "Home", "description": "Affordable housing subsidies and rural/urban shelter schemes" },
+  { "id": "social_security", "name": "Social Security", "icon": "ShieldCheck", "description": "Pensions, insurance cover, and girl child welfare" }
+]

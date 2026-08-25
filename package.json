@@ -1,0 +1,18 @@
+{
+  "name": "schemesaathi-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SchemeSaathi AI - Root workspace scripts",
+  "scripts": {
+    "start": "concurrently -n \"backend,frontend\" -c \"blue,cyan\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev": "concurrently -n \"backend,frontend\" -c \"blue,cyan\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "python backend/run.py",
+    "build": "npm --prefix frontend run build",
+    "preview": "npm --prefix frontend run preview",
+    "test:backend": "python backend/test_backend.py"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}

@@ -1,0 +1,217 @@
+[
+  {
+    "id": 301,
+    "name": "Ayushman Bharat Pradhan Mantri Jan Arogya Yojana",
+    "shortName": "AB-PMJAY",
+    "category": "Health",
+    "subCategory": "Universal Health Cover",
+    "beneficiaries": ["Low-income Families", "Vulnerable Citizens", "Senior Citizens aged 70+"],
+    "schemeType": "Cashless Health Insurance",
+    "description": "World's largest government-funded health assurance scheme providing health cover of ₹5 Lakh per family per year for secondary and tertiary care hospitalization.",
+    "benefit": {
+      "type": "insurance",
+      "amount": 500000,
+      "currency": "INR",
+      "frequency": "Yearly per Family",
+      "installments": null,
+      "description": "Cashless and paperless access to services for the beneficiary at empaneled public and private hospitals up to ₹5,00,000 per family per year. Covers 3 days pre-hospitalization and 15 days post-hospitalization expenses."
+    },
+    "eligibility": {
+      "general": [
+        "Identified as per Socio-Economic Caste Census (SECC 2011) deprivation criteria or active NFSA ration card",
+        "All senior citizens aged 70 and above are eligible for Ayushman Vay Vandana Card irrespective of income",
+        "No restriction on family size, age, or gender"
+      ],
+      "incomeLimit": 300000,
+      "age": "Any",
+      "gender": "Any",
+      "occupation": "Any",
+      "state": "All",
+      "otherConditions": ["Must present Ayushman Card / Golden Card at empaneled hospital"]
+    },
+    "eligibilityChecks": [
+      { "key": "isListedInSECCorRationCard", "type": "boolean", "required": true, "question": "Does your family have a BPL / NFSA Ration Card or SECC 2011 listing?" },
+      { "key": "isSeniorCitizen70Plus", "type": "boolean", "required": false, "question": "Are you or a family member aged 70 years or older?" }
+    ],
+    "requiredDocuments": [
+      "Aadhaar Card of all family members",
+      "Ration Card / Food Security Card / Family ID",
+      "Mobile number for OTP verification",
+      "Passport-size photo (captured via webcam during card creation)"
+    ],
+    "applicationProcess": [
+      "Visit official portal (beneficiary.nha.gov.in) or download the Ayushman App",
+      "Enter mobile number and authenticate via OTP",
+      "Search family using State, District, Aadhaar Number, or Family ID / Ration Card number",
+      "Perform e-KYC using Aadhaar OTP or Biometrics (Face/Fingerprint)",
+      "Instant Ayushman Card approval and download PVC / Digital Card"
+    ],
+    "applicationWindow": { "type": "Year Round", "details": "Continuous card issuance and hospital cashless claims 24x7" },
+    "processingTime": { "estimated": "Instant to 24 hours", "dependsOn": ["Aadhaar e-KYC match"] },
+    "verification": ["National Health Authority (NHA) Database", "State Health Agency", "Aadhaar e-KYC"],
+    "officialLinks": {
+      "schemePortal": "https://beneficiary.nha.gov.in",
+      "myScheme": "https://www.myscheme.gov.in/schemes/ab-pmjay",
+      "ministry": "https://nha.gov.in"
+    },
+    "modeOfApplication": ["Online (beneficiary.nha.gov.in)", "Ayushman App", "Empaneled Hospital (Ayushman Mitra)", "CSC / MeeSeva"],
+    "ministry": "Ministry of Health and Family Welfare / National Health Authority",
+    "governmentLevel": "Central",
+    "availableStates": ["All"],
+    "status": "Active",
+    "tags": ["health insurance", "pmjay", "ayushman card", "5 lakh cover", "cashless treatment", "senior 70"],
+    "searchKeywords": ["ayushman bharat", "pmjay", "golden card", "5 lakh hospital", "cashless medical", "vay vandana 70"],
+    "relatedSchemes": [302, 303, 304],
+    "aiContext": "Provides ₹5 Lakh cashless hospital treatment per family per year at empaneled hospitals across India. Covers pre-existing conditions from day one. Senior citizens 70+ get top-up ₹5 Lakh cover.",
+    "faqs": [
+      { "question": "Are pre-existing diseases covered under PM-JAY?", "answer": "Yes, all pre-existing medical conditions are covered from day one of enrollment without any waiting period." },
+      { "question": "How do senior citizens aged 70+ get benefits?", "answer": "All citizens aged 70+ receive the Ayushman Vay Vandana Card with a dedicated ₹5 Lakh cover regardless of their family income." }
+    ],
+    "lastUpdated": "2026-08-10",
+    "lastVerified": "2026-08-10"
+  },
+  {
+    "id": 302,
+    "name": "Pradhan Mantri Matru Vandana Yojana",
+    "shortName": "PMMVY",
+    "category": "Health",
+    "subCategory": "Maternal & Child Health",
+    "beneficiaries": ["Pregnant Women", "Lactating Mothers"],
+    "schemeType": "Direct Benefit Transfer (DBT)",
+    "description": "Direct financial incentive to pregnant women and lactating mothers for partial wage loss compensation and ensuring nutritious health care during first and second child.",
+    "benefit": {
+      "type": "monetary",
+      "amount": 5000,
+      "currency": "INR",
+      "frequency": "In installments per pregnancy",
+      "installments": 2,
+      "description": "₹5,000 in 2 installments for the first child (₹3,000 at pregnancy registration & antenatal checkup, ₹2,000 at child birth & vaccination). For 2nd child (if a girl), ₹6,000 in a single installment."
+    },
+    "eligibility": {
+      "general": [
+        "Pregnant Women and Lactating Mothers (PW&LM) who are Indian citizens",
+        "Must be registered at Anganwadi Centre (AWC) / approved Health Facility within 570 days of LMP date",
+        "Applicable for first live child; additional benefit of ₹6,000 if the second child born is a girl"
+      ],
+      "incomeLimit": 800000,
+      "age": "19-45",
+      "gender": "Female",
+      "occupation": "Any",
+      "state": "All",
+      "otherConditions": [
+        "Women in regular employment with Central/State Govt or PSUs receiving paid maternity leave are excluded"
+      ]
+    },
+    "eligibilityChecks": [
+      { "key": "isPregnantOrLactatingMother", "type": "boolean", "required": true, "question": "Are you a pregnant woman or lactating mother registered with Anganwadi/Health Center?" },
+      { "key": "isFirstOrSecondChildGirl", "type": "boolean", "required": true, "question": "Is this your first pregnancy, or second child where newborn is a girl?" },
+      { "key": "isNotGovtEmployeeWithPaidLeave", "type": "boolean", "required": true, "question": "Are you NOT a regular government employee receiving paid maternity leave?" }
+    ],
+    "requiredDocuments": [
+      "Mother's & Husband's Aadhaar Cards",
+      "Mother and Child Protection (MCP) Card / RCH ID",
+      "Aadhaar-seeded Bank Passbook of the Mother",
+      "Child Birth Certificate & Immunization Record (for 2nd installment)"
+    ],
+    "applicationProcess": [
+      "Register pregnancy at nearest Anganwadi Centre or on PMMVY portal (pmmvy.wcd.gov.in)",
+      "Submit MCP card details and minimum one Antenatal Check-up (ANC) record",
+      "Anganwadi Worker / ASHA worker verifies documents and submits online",
+      "DBT payment transferred directly to mother's Aadhaar-linked bank account"
+    ],
+    "applicationWindow": { "type": "Year Round", "details": "Apply within 570 days of Last Menstrual Period (LMP)" },
+    "processingTime": { "estimated": "30 days", "dependsOn": ["Anganwadi verification and CDPO approval"] },
+    "verification": ["Anganwadi Worker (AWW)", "ASHA Worker", "Child Development Project Officer (CDPO)"],
+    "officialLinks": {
+      "schemePortal": "https://pmmvy.wcd.gov.in",
+      "myScheme": "https://www.myscheme.gov.in/schemes/pmmvy",
+      "ministry": "https://wcd.nic.in"
+    },
+    "modeOfApplication": ["Online (pmmvy.wcd.gov.in)", "Offline (Anganwadi Centre / Primary Health Centre)"],
+    "ministry": "Ministry of Women and Child Development",
+    "governmentLevel": "Central",
+    "availableStates": ["All"],
+    "status": "Active",
+    "tags": ["pregnancy", "maternal health", "mother", "women welfare", "pmmvy", "5000"],
+    "searchKeywords": ["matru vandana yojana", "pmmvy", "pregnancy 5000", "maternity benefit", "anganwadi pregnancy"],
+    "relatedSchemes": [301, 303],
+    "aiContext": "Provides ₹5,000 for 1st child (in 2 installments) and ₹6,000 for 2nd child if girl child. Direct bank transfer for nutrition and medical checks.",
+    "faqs": [
+      { "question": "Can I apply for the second child?", "answer": "Yes, under PMMVY 2.0, if the second child is a girl, a direct financial incentive of ₹6,000 is given in a single installment." },
+      { "question": "Is mother's Aadhaar mandatory?", "answer": "Yes, the mother's Aadhaar number and Aadhaar-seeded bank account are mandatory." }
+    ],
+    "lastUpdated": "2026-07-01",
+    "lastVerified": "2026-07-01"
+  },
+  {
+    "id": 303,
+    "name": "Dr. YSR Aarogyasri Scheme",
+    "shortName": "Aarogyasri",
+    "category": "Health",
+    "subCategory": "State Health Assurance",
+    "beneficiaries": ["BPL Families in Andhra Pradesh", "Rice Card Holders in AP"],
+    "schemeType": "Cashless Health Cover",
+    "description": "Andhra Pradesh government flagship health scheme providing cashless medical treatment up to ₹25 Lakh for over 3,250 medical procedures at empaneled hospitals.",
+    "benefit": {
+      "type": "insurance",
+      "amount": 2500000,
+      "currency": "INR",
+      "frequency": "Yearly per Family",
+      "installments": null,
+      "description": "Cashless treatment up to ₹25,00,000 per family per year covering surgeries, therapies, medicines, food, and post-operative financial support under Aarogya Aasara (₹225/day or ₹5,000/month during recovery)."
+    },
+    "eligibility": {
+      "general": [
+        "Must be a resident of Andhra Pradesh holding a valid Rice Card / Aarogyasri Card",
+        "Annual household income must be below ₹5,00,000",
+        "Total landholding less than 35 acres (dry or wet combined as per rules)"
+      ],
+      "incomeLimit": 500000,
+      "age": "Any",
+      "gender": "Any",
+      "occupation": "Any",
+      "state": "Andhra Pradesh",
+      "otherConditions": ["Family must not own a four-wheeler (except taxi/tractor/auto)"]
+    },
+    "eligibilityChecks": [
+      { "key": "isAPRiceCardHolder", "type": "boolean", "required": true, "question": "Do you hold a valid Andhra Pradesh Rice Card or Aarogyasri Card?" },
+      { "key": "incomeBelow5LakhAP", "type": "boolean", "required": true, "question": "Is your family total annual income below ₹5,00,000?" }
+    ],
+    "requiredDocuments": [
+      "Aarogyasri Card / Rice Card / BPL Ration Card",
+      "Aadhaar Card of patient and family head",
+      "Doctor Referral / Prescription from Govt Hospital or Empaneled Hospital",
+      "Bank Account Passbook (for Aarogya Aasara recovery allowance)"
+    ],
+    "applicationProcess": [
+      "Visit any network hospital in Andhra Pradesh, Hyderabad, Chennai, or Bengaluru",
+      "Meet the Aarogya Mithra desk at the hospital entrance",
+      "Aarogya Mithra verifies Rice Card / Aadhaar details on the portal",
+      "Pre-authorization approved online within 2 hours; cashless treatment begins immediately",
+      "Post-discharge Aarogya Aasara allowance credited to patient's account"
+    ],
+    "applicationWindow": { "type": "Year Round", "details": "Instant 24x7 emergency and planned admission at hospital Aarogya Mithra desk" },
+    "processingTime": { "estimated": "1-2 hours pre-authorization", "dependsOn": ["Hospital e-preauth upload"] },
+    "verification": ["Dr. YSR Aarogyasri Health Care Trust", "Hospital Aarogya Mithra"],
+    "officialLinks": {
+      "schemePortal": "https://www.ysraarogyasri.ap.gov.in",
+      "myScheme": "https://www.myscheme.gov.in",
+      "ministry": "https://ysraarogyasri.ap.gov.in"
+    },
+    "modeOfApplication": ["Hospital Aarogya Mithra Desk", "Grama Sachivalayam / Village Clinic"],
+    "ministry": "Department of Health, Medical and Family Welfare, Government of Andhra Pradesh",
+    "governmentLevel": "State",
+    "availableStates": ["Andhra Pradesh"],
+    "status": "Active",
+    "tags": ["andhra pradesh", "aarogyasri", "25 lakh", "cashless hospital", "aarogya aasara"],
+    "searchKeywords": ["aarogyasri", "ap health scheme", "25 lakh medical", "aarogya aasara", "ysr health card"],
+    "relatedSchemes": [301, 302],
+    "aiContext": "Andhra Pradesh scheme providing up to ₹25 Lakh cashless hospital treatment for 3,250+ procedures at network hospitals in AP, Hyderabad, Chennai, Bengaluru + Aarogya Aasara post-op cash support.",
+    "faqs": [
+      { "question": "Can I get treatment outside Andhra Pradesh under Aarogyasri?", "answer": "Yes, over 150 super-specialty hospitals in Hyderabad, Chennai, and Bengaluru are empaneled for high-end surgeries." },
+      { "question": "What is Aarogya Aasara?", "answer": "It is post-operative wage assistance given during the doctor-advised recovery period (₹225/day up to ₹5,000/month) directly via DBT." }
+    ],
+    "lastUpdated": "2026-06-15",
+    "lastVerified": "2026-06-15"
+  }
+]

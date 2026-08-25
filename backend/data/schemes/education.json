@@ -1,0 +1,304 @@
+[
+  {
+    "id": 201,
+    "name": "National Means-cum-Merit Scholarship Scheme",
+    "shortName": "NMMSS",
+    "category": "Education",
+    "subCategory": "School Scholarship",
+    "beneficiaries": ["Class 9-12 Students", "Economically Weaker Section Students", "Government School Students"],
+    "schemeType": "Scholarship",
+    "description": "Central Sector scheme awarding scholarships to meritorious students of economically weaker sections to arrest dropouts at Class 8 and encourage secondary education.",
+    "benefit": {
+      "type": "monetary",
+      "amount": 12000,
+      "currency": "INR",
+      "frequency": "Yearly",
+      "installments": 1,
+      "description": "₹12,000 per annum (₹1,000 per month) credited directly to the student's bank account through DBT from Class 9 to Class 12."
+    },
+    "eligibility": {
+      "general": [
+        "Must be studying as regular student in Class 9 in Government, Local Body, or Govt-aided school",
+        "Must have secured at least 55% marks (50% for SC/ST) in Class 8 examination",
+        "Must have qualified the State Level NMMSS Selection Examination"
+      ],
+      "incomeLimit": 350000,
+      "age": "13-18",
+      "gender": "Any",
+      "occupation": "Student",
+      "state": "All",
+      "otherConditions": [
+        "Students of Kendriya Vidyalayas, Navodaya Vidyalayas, Sainik Schools, and residential schools run by State Govts are not eligible"
+      ]
+    },
+    "eligibilityChecks": [
+      { "key": "isGovtOrAidedSchool", "type": "boolean", "required": true, "question": "Are you studying in a Government, Local Body, or Government-aided school?" },
+      { "key": "hasQualifiedNMSSTest", "type": "boolean", "required": true, "question": "Have you appeared and qualified the NMMSS Class 8 selection test?" },
+      { "key": "familyIncomeUnder3_5Lakh", "type": "boolean", "required": true, "question": "Is your parental annual income ₹3,50,000 or less from all sources?" }
+    ],
+    "requiredDocuments": [
+      "Aadhaar Card of the Student",
+      "Class 8 Marks Memo / Report Card",
+      "Income Certificate issued by competent Revenue Authority (Tahsildar / MRO)",
+      "Bank Account Passbook (joint or single in student's name, Aadhaar seeded)",
+      "Bonafide / Enrolment Certificate from current school",
+      "Caste Certificate (for SC/ST/OBC students)"
+    ],
+    "applicationProcess": [
+      "Register and create an applicant account on the National Scholarship Portal (scholarships.gov.in)",
+      "Select 'National Means-cum-Merit Scholarship Scheme' under Ministry of Education",
+      "Fill student details, school U-DISE code, and NMMSS exam roll number",
+      "Upload verified income certificate, bank details, and previous marks card",
+      "Submit application and submit physical copy to School Headmaster / Principal for NSP verification",
+      "School and District Nodal Officer verify online on the NSP portal"
+    ],
+    "applicationWindow": { "type": "Seasonal", "details": "July to October of the academic year on National Scholarship Portal (NSP)" },
+    "processingTime": { "estimated": "45-60 days", "dependsOn": ["Institute Verification", "District Nodal Officer approval", "PFMS DBT clearance"] },
+    "verification": ["School Principal / INO", "District Nodal Officer (DNO)", "State Nodal Officer (SNO)", "PFMS Validation"],
+    "officialLinks": {
+      "schemePortal": "https://scholarships.gov.in",
+      "myScheme": "https://www.myscheme.gov.in/schemes/nmmss",
+      "ministry": "https://dsel.education.gov.in"
+    },
+    "modeOfApplication": ["Online (National Scholarship Portal)"],
+    "ministry": "Department of School Education and Literacy, Ministry of Education",
+    "governmentLevel": "Central",
+    "availableStates": ["All"],
+    "status": "Active",
+    "tags": ["scholarship", "students", "school", "class 9 to 12", "nsp", "nmms"],
+    "searchKeywords": ["nmmss", "nmms scholarship", "national scholarship portal", "class 9 scholarship", "12000 per year"],
+    "relatedSchemes": [202, 203],
+    "aiContext": "Provides ₹12,000/year to students in Class 9-12 from government/aided schools who cleared NMMS test and family income ≤ ₹3.5 Lakh. Applied via National Scholarship Portal.",
+    "faqs": [
+      { "question": "Can private unaided school students apply?", "answer": "No, NMMSS is exclusively for students studying in Government, Local Body, and Government-aided schools." },
+      { "question": "How do I renew the scholarship in Class 10, 11, and 12?", "answer": "Apply for 'Renewal' on NSP every year after passing Class 9/10/11 with minimum 55% marks (50% for SC/ST)." }
+    ],
+    "lastUpdated": "2026-07-20",
+    "lastVerified": "2026-07-20"
+  },
+  {
+    "id": 202,
+    "name": "Post Matric Scholarship for SC / ST Students",
+    "shortName": "PMS-SC-ST",
+    "category": "Education",
+    "subCategory": "Higher Education Aid",
+    "beneficiaries": ["SC Students", "ST Students", "Post-Matric / College Students"],
+    "schemeType": "Scholarship",
+    "description": "Centrally Sponsored Scheme providing financial assistance to Scheduled Caste & Scheduled Tribe students studying at post-matriculation or post-secondary stage to complete their education.",
+    "benefit": {
+      "type": "monetary",
+      "amount": "Full Tuition Fee + Academic Allowance up to ₹13,500/year",
+      "currency": "INR",
+      "frequency": "Yearly",
+      "installments": 1,
+      "description": "100% non-refundable compulsory fees reimbursed to institution, plus monthly maintenance allowance (up to ₹13,500/year for hostellers, ₹7,000 for day scholars)."
+    },
+    "eligibility": {
+      "general": [
+        "Must belong to Scheduled Caste (SC) or Scheduled Tribe (ST)",
+        "Must be pursuing post-matriculation courses (Class 11, 12, ITI, Diploma, Degree, PG, Ph.D.) in recognized institutions",
+        "Must have passed previous qualifying examination"
+      ],
+      "incomeLimit": 250000,
+      "age": "16-35",
+      "gender": "Any",
+      "occupation": "Student",
+      "state": "All",
+      "otherConditions": ["Candidate should not be in full-time employment during studies"]
+    },
+    "eligibilityChecks": [
+      { "key": "isSCorSTCommunity", "type": "boolean", "required": true, "question": "Do you possess a valid SC or ST Caste Certificate issued by the competent authority?" },
+      { "key": "isEnrolledPostMatric", "type": "boolean", "required": true, "question": "Are you enrolled in Class 11, 12, Diploma, Graduation, or Post-Graduation?" },
+      { "key": "incomeUnder2_5Lakh", "type": "boolean", "required": true, "question": "Is your total family annual income ₹2,50,000 or below?" }
+    ],
+    "requiredDocuments": [
+      "Aadhaar Card",
+      "Caste Certificate (SC/ST) with digital bar code",
+      "Income Certificate (Current financial year)",
+      "Previous Year Marks Sheets / Transcripts",
+      "College Admission Fee Receipt & Bonafide Certificate",
+      "Aadhaar-seeded Bank Account Passbook"
+    ],
+    "applicationProcess": [
+      "Visit the National Scholarship Portal (scholarships.gov.in) or your State e-Pass Portal",
+      "Register using Aadhaar and mobile number",
+      "Select Post Matric Scholarship for SC or ST Students",
+      "Upload caste, income, admission receipt, and bank passbook",
+      "Submit application online and forward to College Nodal Officer for verification"
+    ],
+    "applicationWindow": { "type": "Seasonal", "details": "July to November of every academic year" },
+    "processingTime": { "estimated": "45-90 days", "dependsOn": ["College verification", "Welfare Department sanction"] },
+    "verification": ["College Principal", "District Social Welfare Officer", "State Tribal/Social Welfare Department"],
+    "officialLinks": {
+      "schemePortal": "https://scholarships.gov.in",
+      "myScheme": "https://www.myscheme.gov.in/schemes/pms-sc",
+      "ministry": "https://socialjustice.gov.in"
+    },
+    "modeOfApplication": ["Online (NSP / State e-Pass)"],
+    "ministry": "Ministry of Social Justice and Empowerment / Ministry of Tribal Affairs",
+    "governmentLevel": "Central",
+    "availableStates": ["All"],
+    "status": "Active",
+    "tags": ["sc scholarship", "st scholarship", "post matric", "college fee reimbursement", "nsp"],
+    "searchKeywords": ["post matric sc", "post matric st scholarship", "college scholarship", "social welfare fee"],
+    "relatedSchemes": [201, 203, 205],
+    "aiContext": "Provides full non-refundable tuition fee + maintenance allowance up to ₹13,500/year for SC/ST students in college/diploma with family income ≤ ₹2.5 Lakh.",
+    "faqs": [
+      { "question": "Is there any restriction on course type?", "answer": "All recognized post-secondary courses like Intermediate, B.A., B.Sc., B.Tech, MBBS, MBA, ITI, Polytechnic, and Ph.D. are covered." },
+      { "question": "Can I receive this scholarship along with another state scholarship?", "answer": "No, a student can hold only one government scholarship for the same course." }
+    ],
+    "lastUpdated": "2026-07-15",
+    "lastVerified": "2026-07-15"
+  },
+  {
+    "id": 204,
+    "name": "AICTE Pragati Scholarship for Girl Students",
+    "shortName": "Pragati",
+    "category": "Education",
+    "subCategory": "Technical Education",
+    "beneficiaries": ["Girl Students", "Engineering Students", "Diploma Students"],
+    "schemeType": "Scholarship",
+    "description": "Scheme implemented by AICTE aimed at providing assistance for advancement of girls pursuing technical education (Degree and Diploma).",
+    "benefit": {
+      "type": "monetary",
+      "amount": 50000,
+      "currency": "INR",
+      "frequency": "Yearly",
+      "installments": 1,
+      "description": "₹50,000 per year for every year of study as a lump sum amount towards college fees, purchase of computer, books, stationeries, and equipment."
+    },
+    "eligibility": {
+      "general": [
+        "Must be a girl student admitted to 1st year of Degree/Diploma course or 2nd year through lateral entry",
+        "Institution must be AICTE approved",
+        "Maximum two girls per family are eligible"
+      ],
+      "incomeLimit": 800000,
+      "age": "17-25",
+      "gender": "Female",
+      "occupation": "Student",
+      "state": "All",
+      "otherConditions": ["Family income must not exceed ₹8 Lakh per annum"]
+    },
+    "eligibilityChecks": [
+      { "key": "isGirlStudentInAICTECol", "type": "boolean", "required": true, "question": "Are you a female student enrolled in an AICTE-approved engineering/polytechnic college?" },
+      { "key": "isFirstYearOrLateral", "type": "boolean", "required": true, "question": "Are you admitted in 1st year of Degree/Diploma or 2nd year lateral entry in the current academic year?" },
+      { "key": "incomeUnder8Lakh", "type": "boolean", "required": true, "question": "Is your total annual family income ₹8,00,000 or below?" }
+    ],
+    "requiredDocuments": [
+      "Aadhaar Card",
+      "Class 10 and 12 / ITI Mark Sheets",
+      "Central / State Admission Allotment Letter",
+      "Tuition Fee Receipt for current year",
+      "Income Certificate (issued by Tahsildar / Revenue Authority)",
+      "Family Declaration (certifying maximum 2 girl applicants)"
+    ],
+    "applicationProcess": [
+      "Visit National Scholarship Portal (scholarships.gov.in)",
+      "Select AICTE Schemes -> Pragati Scholarship Scheme For Girl Students (Technical Degree/Diploma)",
+      "Fill student profile, academic roll numbers, and parent details",
+      "Upload admission letter, income proof, and bank passbook",
+      "Submit and have college Principal verify on NSP portal"
+    ],
+    "applicationWindow": { "type": "Seasonal", "details": "August to December on National Scholarship Portal" },
+    "processingTime": { "estimated": "60 days", "dependsOn": ["AICTE Merit List generation and NSP verification"] },
+    "verification": ["College Principal", "AICTE Nodal Officer"],
+    "officialLinks": {
+      "schemePortal": "https://www.aicte-india.org/schemes/students-development-schemes/pragati-scholarship-scheme",
+      "myScheme": "https://www.myscheme.gov.in/schemes/psgsd",
+      "ministry": "https://www.education.gov.in"
+    },
+    "modeOfApplication": ["Online (National Scholarship Portal)"],
+    "ministry": "All India Council for Technical Education (AICTE), Ministry of Education",
+    "governmentLevel": "Central",
+    "availableStates": ["All"],
+    "status": "Active",
+    "tags": ["girl child", "women scholarship", "aicte", "engineering", "polytechnic", "50000"],
+    "searchKeywords": ["pragati scholarship", "aicte girl scholarship", "engineering scholarship girls", "btech scholarship", "diploma girls"],
+    "relatedSchemes": [201, 202, 203],
+    "aiContext": "Provides ₹50,000/year to girl students studying in AICTE-approved B.Tech/Diploma programs with family income ≤ ₹8 Lakh. Max 2 girls per family.",
+    "faqs": [
+      { "question": "Can degree lateral entry students apply?", "answer": "Yes, girls admitted directly into 2nd year through lateral entry are eligible." },
+      { "question": "What if my family income is ₹7 Lakh?", "answer": "You are eligible, as the upper income limit for Pragati is ₹8 Lakh per annum." }
+    ],
+    "lastUpdated": "2026-08-01",
+    "lastVerified": "2026-08-01"
+  },
+  {
+    "id": 205,
+    "name": "Jagananna Vidya Deevena & Vasathi Deevena",
+    "shortName": "JVD",
+    "category": "Education",
+    "subCategory": "Full Fee Reimbursement",
+    "beneficiaries": ["College Students in AP", "Polytechnic / ITI / Degree / BTech / Pharmacy / MBA Students", "Low-income Families in AP"],
+    "schemeType": "Direct Benefit Transfer (DBT)",
+    "description": "Andhra Pradesh government flagship scheme providing 100% full tuition fee reimbursement (Vidya Deevena) and boarding/mess assistance of up to ₹20,000/year (Vasathi Deevena).",
+    "benefit": {
+      "type": "monetary",
+      "amount": "100% Tuition Fee + ₹20,000/year Boarding Allowance",
+      "currency": "INR",
+      "frequency": "Quarterly",
+      "installments": 4,
+      "description": "Complete fee deposited into the mother's bank account every quarter, plus ₹10,000 (ITI), ₹15,000 (Polytechnic), or ₹20,000 (Degree/Engineering) for hostel/mess."
+    },
+    "eligibility": {
+      "general": [
+        "Must be a resident of Andhra Pradesh",
+        "Must be enrolled in Polytechnic, ITI, Degree, Engineering, Medicine, or PG courses in recognized institutions",
+        "Must maintain minimum 75% student attendance"
+      ],
+      "incomeLimit": 250000,
+      "age": "17-30",
+      "gender": "Any",
+      "occupation": "Student",
+      "state": "Andhra Pradesh",
+      "otherConditions": [
+        "Family must not own a four-wheeler (except taxi/tractor)",
+        "Wet land < 10 acres or dry land < 25 acres or total < 25 acres"
+      ]
+    },
+    "eligibilityChecks": [
+      { "key": "isAPResidentStudent", "type": "boolean", "required": true, "question": "Are you a permanent resident student of Andhra Pradesh?" },
+      { "key": "has75PercentAttendance", "type": "boolean", "required": true, "question": "Do you maintain at least 75% college biometric attendance?" },
+      { "key": "familyIncomeUnder2_5LakhAP", "type": "boolean", "required": true, "question": "Is your family total annual income ₹2,50,000 or less?" }
+    ],
+    "requiredDocuments": [
+      "Student & Mother's Aadhaar Cards",
+      "Integrated Caste & Income Certificate (issued by Tahsildar)",
+      "Rice Card / Ration Card",
+      "Mother's Aadhaar-seeded Bank Account Passbook",
+      "College Admission Allotment Letter & Fee Structure",
+      "College Biometric Attendance Report"
+    ],
+    "applicationProcess": [
+      "College registers the student on the Jnanabhumi / Navasakam portal",
+      "Welfare and Education Assistant (WEA) of Village/Ward Secretariat conducts physical field verification",
+      "Mother's biometric authentication at Village Secretariat",
+      "Eligible list published after social audit in Grama/Ward Sachivalayam",
+      "Direct Benefit Transfer credited into mother's account every quarter"
+    ],
+    "applicationWindow": { "type": "Year Round", "details": "Enrolment open at start of each semester" },
+    "processingTime": { "estimated": "30 days", "dependsOn": ["Village Secretariat verification and college attendance upload"] },
+    "verification": ["Welfare and Education Assistant", "Panchayat Secretary", "Jnanabhumi Portal"],
+    "officialLinks": {
+      "schemePortal": "https://jnanabhumi.ap.gov.in",
+      "myScheme": "https://www.myscheme.gov.in",
+      "ministry": "https://ap.gov.in"
+    },
+    "modeOfApplication": ["Jnanabhumi Portal", "Grama / Ward Sachivalayam"],
+    "ministry": "Department of Higher Education & Social Welfare, Government of Andhra Pradesh",
+    "governmentLevel": "State",
+    "availableStates": ["Andhra Pradesh"],
+    "status": "Active",
+    "tags": ["andhra pradesh", "fee reimbursement", "vidya deevena", "vasathi deevena", "mother account"],
+    "searchKeywords": ["jagananna vidya deevena", "ap fee reimbursement", "vasathi deevena", "jnanabhumi scholarship", "andhra college fee"],
+    "relatedSchemes": [201, 202],
+    "aiContext": "Andhra Pradesh scheme providing 100% college tuition fee reimbursement + ₹20,000/yr hostel aid deposited directly into the mother's bank account for families with income ≤ ₹2.5 Lakh and 75% attendance.",
+    "faqs": [
+      { "question": "Whose bank account receives the payment?", "answer": "The scheme mandates that all fee reimbursement amounts are credited directly into the student's mother's Aadhaar-seeded bank account." },
+      { "question": "Is attendance mandatory?", "answer": "Yes, 75% student biometric attendance in college is compulsory to receive quarterly fee disbursements." }
+    ],
+    "lastUpdated": "2026-06-01",
+    "lastVerified": "2026-06-01"
+  }
+]
